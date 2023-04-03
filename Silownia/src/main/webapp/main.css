@@ -1,0 +1,142 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Monoton&family=Permanent+Marker&family=Spectral:wght@300&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap');
+  *{
+    box-sizing: border-box;
+}
+  body{
+    background-image: url("../img/tło1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow:  hidden;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    background-size: cover;
+    font-family: 'Kalam', cursive;
+    max-width: 100%;
+}
+ul li{
+  display: inline;
+ 
+}
+nav a{
+    margin-right: 80px;
+    max-width: 100%;
+    text-align: center;
+}
+nav a:hover{
+    letter-spacing: 3px;
+}
+a{
+    color: rgb(255, 252, 252);
+    font-size: 20px;
+    text-decoration: none;
+    margin: 15px 0;
+    transition: 0.2s ease-in-out;
+    padding: 3px;
+    border-radius: 10px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    position: relative;
+    max-width: 100%;
+}
+a:hover{
+    color: #ffffff;
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+h1{
+    color: white;
+    font-size: 20px;
+    font-family: 'Spectral', serif;
+}
+h2{
+    color: white;
+    font-size: 22px;
+    font-family: 'Spectral', serif;
+}
+.container{
+    margin:0 auto;
+    margin-top: 5px;
+    width: 75%;
+    padding: 10px;
+    text-shadow: 0 0 10px rgba(201, 24, 24, 0.5);
+    border-radius: 10px;
+
+}
+.opis {
+    display: flex;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border: 15px solid rgba(211, 40, 227, 0.75);
+    border-top: 10px solid rgba(63, 15, 218, 0.75);
+    border-left: 5px solid rgba(63, 15, 218, 0.75);
+    border-radius: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 50%;
+    height: auto;
+    backdrop-filter: blur(10px);
+    background-color: #7664a9;
+    max-height: 100%;
+  }
+.naglowek-opis{
+  font-size: 25px;
+  color: #fafafa;
+  border-radius: 10px;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+.opis p{
+    text-align: center;
+    padding-right: 50px;
+    padding-left: 50px;
+    font-family: 'Tajawal', sans-serif;
+  }
+p{
+    font-size: 20px;
+    color: white;
+}
+.button {
+    display: inline-block;
+    padding: 25px 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+    box-shadow: 0px 0px 5px #666;
+  }
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+span {
+    margin-right: 80px;
+  }
+i{
+    margin-right: 10px;
+}
