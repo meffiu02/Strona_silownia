@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+* {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://img.freepik.com/free-vector/gradient-pastel-color-background_23-2149360873.jpg?w=740&t=st=1681398945~exp=1681399545~hmac=4f0bf02443adba1d0e4087b422f541f90cfb16b2cbab1a0e14e5482bd590255f");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow:  hidden;
+  }
+  nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    background-size: cover;
+    font-family: 'Poppins', cursive;
+    max-width: 100%;
+}
+ul li{
+  display: inline;
+ 
+}
+nav a{
+    margin-right: 50px;
+    max-width: 100%;
+    text-align: center;
+}
+nav a:hover{
+    letter-spacing: 3px;
+}
+a{
+    color: rgb(255, 255, 255);
+    font-size: 19px;
+    text-decoration: none;
+    margin: 10px 0;
+    transition: 0.2s ease-in-out;
+    padding: 3px;
+    border-radius: 10px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    position: relative;
+    max-width: 100%;
+}
+a.odnosniki:hover{
+    color: #ffffff;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5%;
+}
+.kalkulator{
+    padding: 5px;
+    margin: 2%;
+    width: 60%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    box-shadow: 0 2px 3px 0px rgba(0,0, 0, 0.25);
+    border-radius: 10px;
+    transition: .2s all;
+}
+.bmi{
+    background-image: url('https://stylemixthemes.com/wp/wp-content/uploads/sites/2/2022/09/roman-skrypnyk-DEga33BYvmA-unsplash.jpg');
+    background-position: center;
+}
+.bmr{
+    background-image: url('https://stylemixthemes.com/wp/wp-content/uploads/sites/2/2022/09/roman-skrypnyk-DEga33BYvmA-unsplash.jpg');
+    background-position: center;
+}
+.h1{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 40px;
+    text-shadow: 2px 0px 0px #55ffff;
+}
+.button{
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 25px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 250px;
+    cursor: pointer;
+    background: #a188fc;
+    background: linear-gradient(to right,#a188fc 0%,#233ade 50%,#a188fc 100% );
+    color: #ccffff;
+    padding: 7px 30px;
+    border-radius: 30px;
+    transition: all 0.7s;
+    border: solid 1px #333;
+}
+.button:hover{
+    background: linear-gradient(to right,#a188fc 0%,#233ade 50%,#a188fc 100% );
+    background-size: 200px;
+    background-position: 0px;
+    box-shadow: 0 0 20px #000000;
+    border: solid 1px #ccffff;
+}
+.container:hover .kalkulator{
+    filter: blur(3px);
+    opacity: .1;
+    transform: scale(0.98);
+    box-shadow: none;
+}
+.container:hover .kalkulator:hover{
+    transform: scale(1);
+    filter: blur(0px);
+    opacity: 1;
+    box-shadow: 0 0 20px #229999;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+span {
+    margin-right: 80px;
+  }
+i{
+    margin-right: 10px;
+}

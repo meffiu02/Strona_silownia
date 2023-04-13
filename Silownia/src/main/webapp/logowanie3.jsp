@@ -1,5 +1,5 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8"%>
- 
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -7,15 +7,18 @@
     <meta charset="utf-8" />
     <title>Logowanie/Rejestracja</title>
     <meta name="description" content="Logowanie/Rejestracja" />
-    <meta name="keywords" content="siÅownia, gym, fitness, bmi, bmr" />
+    <meta name="keywords" content="siłownia, gym, fitness, bmi, bmr" />
     <meta name="author" content="Mateusz Jeżak" />
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet">
     <link rel="stylesheet" href="logowanie3.css">
+    
 
 </head>
 
 <body>
 
+<input type="hidden" id="status" value="<%=request.getAttribute("status") %>">
+<input type="hidden" id="status" value="<%=request.getAttribute("status-rej") %>">
 
     <div class="container" id="container">
         <div class="form-container register-container">
@@ -64,9 +67,21 @@
             </div>
         </div>
     </div>
-    <script src="logowanie3.js"></script>
-   
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" href="alert/dist/sweetalert.css">
+   <script src="logowanie3.js"></script>
+<script type="text/javascript">
 	
+		var status = document.getElementById("status").value;
+		if(status == "failed")
+		{
+			swal("Błąd","Nie udało się zalogować","error");
+			document.getElementById("status").value="";	
+
+		}
+		
+
+	</script>
 </body>
 
 </html>

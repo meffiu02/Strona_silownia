@@ -41,7 +41,7 @@ public class RegistrationServlet2 extends HttpServlet {
 		int rowCount = pst.executeUpdate();
 		dispatcher = request.getRequestDispatcher("logowanie3.jsp");
 		if(rowCount > 0) {
-			request.setAttribute("status", "succes");	
+			request.setAttribute("status", "success");	
 		}
 		else {
 			request.setAttribute("status", "failed");

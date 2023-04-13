@@ -20,13 +20,12 @@ if(session.getAttribute("email-log")==null)
 
         <nav>
             <a href="#"><b>Strona główna</b></a>
-            <a href="wyborkalkulatora.html"><b>Kalkulatory</b></a>
-            <a href="licznikkalorii.html"><b>Licznik kalorii</b></a>
+            <a href="wyborkalkulatora.jsp"><b>Kalkulatory</b></a>
+            <a href="licznikkalorii.jsp"><b>Licznik kalorii</b></a>
             <a href="#"><b>Pomiary</b></a>
             <a href="#"><b>Atlas Ćwiczeń</b></a>
-            <a href="logowanie3.html"><b>Logowanie/Rejstracja</b></a>
-            <a href="logout"><b>Wyloguj</b></a>
             <a><%=session.getAttribute("email-log") %></a>
+            <a href="logout"><b>Wyloguj</b></a>
         </nav>
         <div class="container">
             <div class="cytat">
@@ -34,8 +33,9 @@ if(session.getAttribute("email-log")==null)
                 <h2 class="cytat_druga">NA WIELKIE RZECZY POTRZEBA CZASU</h2>
             </div>
             <div class="opis">
-                    <h1 class="naglowek-opis">nagłówek</h1>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum blanditiis omnis minus provident rerum, ratione distinctio dignissimos fugit nisi sunt tempora inventore debitis laudantium! Voluptatibus quam eos debitis possimus quisquam?</p>
+                <p>Nasza strona to źródło wartościowych informacji dotyczących zdrowego stylu życia i perfekcyjnego treningu</p>
+                <p>Dzięki naszej wiedzy będziesz wstanie osiągnąć swoją <b class="wymarzona-sylwetka">wymarzoną sylwetkę</b></p>
+                <p>Zapraszamy do regularnego odwiedzania naszej strony, aby pozostać na bieżąco z najnowszymi trendami i technikami treningowymi!</p>
             </div>
            
         </div>

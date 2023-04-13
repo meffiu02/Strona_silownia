@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url("../img/tło2.jpg");
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5fea20d8455b341d9dd8ba63/1609441552564-AW5AYSGG2WPXW8TACN5O/landing-background-min-squarespace.jpg?format=2500w");
  
     background-repeat: no-repeat;
     background-size: cover;
@@ -206,7 +206,7 @@ input{
     transform: translate(-100%);
 }
 .overlay{
-    background-image: url('../img/tło3.jpg');
+    background-image: url('https://wallpaperset.com/w/full/c/4/8/45474.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;

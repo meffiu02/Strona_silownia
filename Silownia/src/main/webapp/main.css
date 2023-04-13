@@ -1,12 +1,12 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Monoton&family=Permanent+Marker&family=Spectral:wght@300&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Poppins");
   *{
     box-sizing: border-box;
 }
   body{
-    background-image: url("../img/tło1.jpg");
+    background-image: url('https://img.freepik.com/free-vector/people-exercising-fitness-gym-room-with-sport-equipment-workouts-woman-men-training-treadmill-bike-lifting-dumbbells-healthy-lifestyle_575670-1883.jpg?w=996&t=st=1681394086~exp=1681394686~hmac=8e5e563692e97babcf48681e4980f31f37a63c3d068cea1ff503fae4225e1ad6');
     background-repeat: no-repeat;
     background-size: cover;
     overflow:  hidden;
@@ -21,7 +21,7 @@ nav{
     align-items: center;
     height: 20%;
     background-size: cover;
-    font-family: 'Kalam', cursive;
+    font-family:"Poppins", cursive;
     max-width: 100%;
 }
 ul li{
@@ -29,7 +29,7 @@ ul li{
  
 }
 nav a{
-    margin-right: 80px;
+    margin-right: 50px;
     max-width: 100%;
     text-align: center;
 }
@@ -37,46 +37,53 @@ nav a:hover{
     letter-spacing: 3px;
 }
 a{
-    color: rgb(255, 252, 252);
-    font-size: 20px;
+    color: rgb(128, 24, 138);
+    font-size: 19px;
     text-decoration: none;
     margin: 15px 0;
     transition: 0.2s ease-in-out;
     padding: 3px;
-    border-radius: 10px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     position: relative;
     max-width: 100%;
 }
 a:hover{
     color: #ffffff;
-    border-bottom: 2px solid rgb(255, 255, 255);
+}
+.cytat{
+  width: 75%;
 }
 h1{
-    color: white;
-    font-size: 20px;
+    color: rgb(233, 100, 215);
+    font-size: 25px;
     font-family: 'Spectral', serif;
+    text-shadow: -1px 0 black, 0 2px black,
+      1px 0 black, 0 -1px black;
+    font-family:"Poppins", cursive;
 }
 h2{
-    color: white;
-    font-size: 22px;
+    color: rgb(233, 100, 215);
+    font-size: 28px;
     font-family: 'Spectral', serif;
+    text-shadow: -1px 0 black, 0 2px black,
+      1px 0 black, 0 -1px black;
+      font-family:"Poppins", cursive;
 }
 .container{
     margin:0 auto;
-    margin-top: 5px;
+    margin-top: 15px;
     width: 75%;
     padding: 10px;
-    text-shadow: 0 0 10px rgba(201, 24, 24, 0.5);
     border-radius: 10px;
 
 }
 .opis {
     display: flex;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    border: 15px solid rgba(211, 40, 227, 0.75);
-    border-top: 10px solid rgba(63, 15, 218, 0.75);
-    border-left: 5px solid rgba(63, 15, 218, 0.75);
+    border: 15px solid rgba(249, 179, 255, 0.75);
+    border-top: 10px solid rgba(206, 190, 255, 0.75);
+    border-left: 5px solid rgba(146, 138, 173, 0.75);
     border-radius: 20px;
     flex-direction: column;
     justify-content: center;
@@ -86,25 +93,23 @@ h2{
     width: 50%;
     height: auto;
     backdrop-filter: blur(10px);
-    background-color: #7664a9;
+    background-color: #494747;
     max-height: 100%;
   }
-.naglowek-opis{
-  font-size: 25px;
-  color: #fafafa;
-  border-radius: 10px;
-  font-family: 'Montserrat Alternates', sans-serif;
-}
 .opis p{
-    text-align: center;
-    padding-right: 50px;
-    padding-left: 50px;
-    font-family: 'Tajawal', sans-serif;
-  }
-p{
-    font-size: 20px;
+    text-align: justify;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-family:"Poppins", cursive;
+    font-size: 17px;
     color: white;
-}
+  }
+  p{
+    margin-bottom: 5px;
+  }
+  .wymarzona-sylwetka{
+    color: rgb(233, 100, 215);
+  }
 .button {
     display: inline-block;
     padding: 25px 5px;
@@ -125,7 +130,7 @@ p{
     box-shadow: 0px 0px 5px #666;
   }
 .footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
