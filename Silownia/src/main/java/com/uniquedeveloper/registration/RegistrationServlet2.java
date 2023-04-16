@@ -29,36 +29,44 @@ public class RegistrationServlet2 extends HttpServlet {
 		String haslo = request.getParameter("haslo-rej");
 		RequestDispatcher dispatcher = null;
 		Connection con = null;
-	 try {
-		 Class.forName("com.mysql.cj.jdbc.Driver");
-		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/logowanie?useSSL=false","root","P@ssw0rd");
-		PreparedStatement pst= con.prepareStatement("insert into users(nazwa,email,haslo) values(?,?,?)");
-		 
-		pst.setString(1, nazwa);
-		pst.setString(2, email);
-		pst.setString(3, haslo);
-		
-		int rowCount = pst.executeUpdate();
-		dispatcher = request.getRequestDispatcher("logowanie3.jsp");
-		if(rowCount > 0) {
-			request.setAttribute("status", "success");	
-		}
-		else {
-			request.setAttribute("status", "failed");
-		}
-		dispatcher.forward(request, response);
-		
-	 } catch (Exception e) {
-		 e.printStackTrace();
-	 }
-	 finally {
-		 try {
-			con.close();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	 }
-	}
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/logowanie?useSSL=false","root","P@ssw0rd");
 
+			// Sprawdź, czy email już istnieje w bazie danych
+			PreparedStatement checkEmailStmt = con.prepareStatement("SELECT email FROM users WHERE email=?");
+			checkEmailStmt.setString(1, email);
+			if (checkEmailStmt.executeQuery().next()) {
+				// Jeśli email już istnieje, zwróć komunikat o błędzie
+				dispatcher = request.getRequestDispatcher("logowanie3.jsp");
+				request.setAttribute("status_rej", "failed_rej");
+				dispatcher.forward(request, response);
+				return;
+			}
+
+			// Jeśli email nie istnieje, wykonaj standardowe dodawanie użytkownika
+			PreparedStatement addNewUserStmt = con.prepareStatement("insert into users(nazwa,email,haslo) values(?,?,?)");
+			addNewUserStmt.setString(1, nazwa);
+			addNewUserStmt.setString(2, email);
+			addNewUserStmt.setString(3, haslo);
+			int rowCount = addNewUserStmt.executeUpdate();
+			dispatcher = request.getRequestDispatcher("logowanie3.jsp");
+			if(rowCount > 0) {
+				request.setAttribute("status_rej", "success");	
+			}
+			else {
+				request.setAttribute("status_rej", "failed_rej");
+			}
+			dispatcher.forward(request, response);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }

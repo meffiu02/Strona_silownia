@@ -10,15 +10,14 @@
     <meta name="keywords" content="siłownia, gym, fitness, bmi, bmr" />
     <meta name="author" content="Mateusz Jeżak" />
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet">
-    <link rel="stylesheet" href="logowanie3.css">
-    
+    <link rel="stylesheet" href="logowanie3.css"> 
 
 </head>
 
 <body>
 
 <input type="hidden" id="status" value="<%=request.getAttribute("status") %>">
-<input type="hidden" id="status" value="<%=request.getAttribute("status-rej") %>">
+<input type="hidden" id="status_rej" value="<%=request.getAttribute("status_rej") %>">
 
     <div class="container" id="container">
         <div class="form-container register-container">
@@ -68,17 +67,27 @@
         </div>
     </div>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<link rel="stylesheet" href="alert/dist/sweetalert.css">
+	
    <script src="logowanie3.js"></script>
 <script type="text/javascript">
-	
 		var status = document.getElementById("status").value;
 		if(status == "failed")
 		{
-			swal("Błąd","Nie udało się zalogować","error");
+			swal("Błąd logowania","Nie udało się zalogować. Podano błędny adres e-mail lub hasło","error");
 			document.getElementById("status").value="";	
 
 		}
+		
+		var status_rej = document.getElementById("status_rej").value;
+		if(status_rej == "failed_rej")
+		{
+			
+			swal("Błąd rejestracji","Nie udało się zarejestrować. Użytkownik o podanym adresie e-mail już istnieje","error");
+			document.getElementById("status_rej").value="";	
+
+		}
+		
+		
 		
 
 	</script>
