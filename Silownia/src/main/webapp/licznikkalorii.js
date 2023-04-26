@@ -12,8 +12,8 @@ const productData = {
         carbs: 4.8
     },
     "kurczak": {
-        calories: 165,
-        protein: 31,
+        calories: 98,
+        protein: 21.5,
         fat: 3.6,
         carbs: 0
     },

@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+* {
+  box-sizing: border-box;
+  
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow:  hidden;
+  background-image: url("https://img.freepik.com/free-vector/gradient-pastel-color-background_23-2149360873.jpg?w=740&t=st=1681398945~exp=1681399545~hmac=4f0bf02443adba1d0e4087b422f541f90cfb16b2cbab1a0e14e5482bd590255f");
+}
+
+nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+  background-size: cover;
+  font-family: 'Poppins', cursive;
+  max-width: 100%;
+}
+ul li{
+display: inline;
+
+}
+nav a{
+  margin-right: 50px;
+  max-width: 100%;
+  text-align: center;
+}
+nav a:hover{
+  letter-spacing: 3px;
+}
+a{
+  color: rgb(255, 252, 252);
+  font-size: 17px;
+  text-decoration: none;
+  margin: 10px 0;
+  transition: 0.2s ease-in-out;
+  padding: 3px;
+  border-radius: 10px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  position: relative;
+  max-width: 100%;
+  font-family: 'Poppins', cursive;
+}
+a:hover{
+  color: #ffffff;
+}

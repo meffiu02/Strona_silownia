@@ -14,6 +14,7 @@
 			<li><a href="licznikkalorii.jsp"><b>Licznik kalorii</b></a></li>
 			<li> <a href="#"><b>Pomiary</b></a></li>
 			<li><a href="#"><b>Atlas ćwiczeń</b></a></li>
+			 <li><a href="kontakt.jsp"><b>Kontakt</b></a></li>
 			<li><a>Uzytkownik</a></li>
 			<li><a href="logout"><b>Wyloguj</b></a></li>
 
@@ -52,6 +53,7 @@
 	</ul>
 	<button id="reset-button">Wyzeruj</button>
 	<div>
+
 	<h1>Jedzenie </h1>
     
     <h3>Lista wszystkich dostęnych produktów </h3>

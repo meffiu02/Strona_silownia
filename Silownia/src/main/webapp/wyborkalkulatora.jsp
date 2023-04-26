@@ -16,6 +16,7 @@
             <li><a class="odnosniki"href="licznikkalorii.jsp"><b>Licznik kalorii</b></a></li>
             <li><a class="odnosniki"href="#"><b>Pomiary</b></a></li>
             <li><a class="odnosniki"href="#"><b>Atlas ćwiczeń</b></a></li>
+             <li><a href="#"><b>Kontakt</b></a></li>
             <li><a><%=session.getAttribute("email-log") %></a></li>
             <li><a href="logout"><b>Wyloguj</b></a></li>
         </ul>

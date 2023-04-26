@@ -32,13 +32,14 @@
         <div class="form-container login-container">
             <form method="post" action="login">
                 <h1>Logowanie</h1>
-                <input type="email" name="email-log" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+                <input type="text" name="nazwa-log" placeholder="Nazwa użytkownika" required>
                 <input type="password" name="haslo-log" placeholder="Hasło"required>
                 <div class="content">
                     <div class="checkbox">
                         <input type="checkbox" name="checkbox" id="checkbox">
                         <label>Zapamiętaj mnie</label>
                     </div>
+                    
                     <div class="pass-link">
                         <a href="#">Zapomniałeś hasła?</a>
                     </div>
@@ -70,10 +71,18 @@
 	
    <script src="logowanie3.js"></script>
 <script type="text/javascript">
+
+		var status_success_rej = document.getElementById("status_rej").value;
+		if(status_success_rej == "success_rej")
+		{
+			swal("Tak jest!!!","Udało się zarejestrować.","success");
+			document.getElementById("status_rej").value="";	
+			
+		}
 		var status = document.getElementById("status").value;
 		if(status == "failed")
 		{
-			swal("Błąd logowania","Nie udało się zalogować. Podano błędny adres e-mail lub hasło","error");
+			swal("Błąd logowania","Nie udało się zalogować. Podano błędną nazwe użytkownika lub hasło","error");
 			document.getElementById("status").value="";	
 
 		}
@@ -82,7 +91,7 @@
 		if(status_rej == "failed_rej")
 		{
 			
-			swal("Błąd rejestracji","Nie udało się zarejestrować. Użytkownik o podanym adresie e-mail już istnieje","error");
+			swal("Błąd rejestracji","Nie udało się zarejestrować. Użytkownik o podanym adresie e-mail lub nazwie użytkownika już istnieje","error");
 			document.getElementById("status_rej").value="";	
 
 		}
