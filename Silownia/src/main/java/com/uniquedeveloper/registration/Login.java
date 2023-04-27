@@ -57,6 +57,7 @@ public class Login extends HttpServlet {
 			{
 				session.setAttribute("nazwa-log", rs.getString("nazwa"));
 				dispatcher = request.getRequestDispatcher("main.jsp");
+				session.setAttribute("email-log", rs.getString("email"));
 			}
 			else
 			{

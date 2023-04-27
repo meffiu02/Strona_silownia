@@ -1,3 +1,9 @@
+ 
+ <%
+if(session.getAttribute("nazwa-log")==null)
+	response.sendRedirect("logowanie3.jsp");
+%>
+ 
  <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html lang="pl">
@@ -18,7 +24,7 @@
                 <li> <a href="#"><b>Pomiary</b></a></li>
                 <li><a href="#"><b>Atlas ćwiczeń</b></a></li>
                 <li><a href="kontakt.jsp"><b>Kontakt</b></a></li>
-                <li><a><%=session.getAttribute("email-log") %></a></li>
+                <li><a><%=session.getAttribute("nazwa-log") %></a></li>
             	<li><a href="logout"><b>Wyloguj</b></a></li>
             </ul>
         </nav>
@@ -27,7 +33,10 @@
     
     <form id="myForm" action="https://api.sheetmonkey.io/form/rDDCUEp3RmaPTQqVE8UUmy" method="post">
     <!-- Put HTML input fields in here and see how they fill up your sheet -->
-    <label>Email: <input type="email" name="email" required /></label>
+    <input 
+            type="hidden"
+            name="e-mail"
+            value=" <%= session.getAttribute("email-log") %>">
     <input type="hidden"  value="x-sheetmonkey-current-date-time" />
     <br><br>
 
@@ -36,7 +45,7 @@
    
     <br><br>
 
-    <label>Opis: <input type="text" name="opis" required /></label>
+    <label>Opis: <textarea id="opis" name="opis" rows="5" cols="50" ></textarea></label>
     <input type="hidden" value="x-sheetmonkey-current-date-time" />
     
     <label><input type="hidden" name="czas" value="x-sheetmonkey-current-date-time" /></label>

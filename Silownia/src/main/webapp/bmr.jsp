@@ -1,3 +1,10 @@
+
+<%
+if(session.getAttribute("nazwa-log")==null)
+	response.sendRedirect("logowanie3.jsp");
+%>
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,7 +28,7 @@
                 <li> <a href="#"><b>Pomiary</b></a></li>
                 <li><a href="#"><b>Atlas ćwiczeń</b></a></li>
                  <li><a href="kontakt.jsp"><b>Kontakt</b></a></li>
-               <li><a><%=session.getAttribute("email-log") %></a></li>
+               <li><a><%=session.getAttribute("nazwa-log") %></a></li>
             	<li><a href="logout"><b>Wyloguj</b></a></li>
 
             </ul>

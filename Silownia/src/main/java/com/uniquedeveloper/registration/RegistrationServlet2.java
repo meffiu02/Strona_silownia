@@ -45,7 +45,7 @@ public class RegistrationServlet2 extends HttpServlet {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/logowanie?useSSL=false","root","P@ssw0rd");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/logowanie?useUnicode=true&characterEncoding=UTF-8","root","P@ssw0rd");
 
 			// Sprawdź, czy email już istnieje w bazie danych
 			PreparedStatement checkEmailStmt = con.prepareStatement("SELECT email FROM users WHERE email=?");

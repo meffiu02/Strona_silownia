@@ -18,10 +18,11 @@
 
 <input type="hidden" id="status" value="<%=request.getAttribute("status") %>">
 <input type="hidden" id="status_rej" value="<%=request.getAttribute("status_rej") %>">
-
+<input type="hidden" id="status_new" value="<%=request.getAttribute("status_new") %>">
+<input type="hidden" id="status_new_failed" value="<%=request.getAttribute("status_new_failed") %>">
     <div class="container" id="container">
         <div class="form-container register-container">
-            <form method="post" action="register">
+            <form method="post" action="register" accept-charset="UTF-8">
                 <h1>Rejestracja</h1>
                 <input type="text" name="nazwa-rej" placeholder="Nazwa" required>
                 <input type="email" name="email-rej" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
@@ -30,7 +31,7 @@
             </form>
         </div>
         <div class="form-container login-container">
-            <form method="post" action="login">
+            <form method="post" action="login" accept-charset="UTF-8">
                 <h1>Logowanie</h1>
                 <input type="text" name="nazwa-log" placeholder="Nazwa użytkownika" required>
                 <input type="password" name="haslo-log" placeholder="Hasło"required>
@@ -41,7 +42,7 @@
                     </div>
                     
                     <div class="pass-link">
-                        <a href="#">Zapomniałeś hasła?</a>
+                        <a href="forgotPassword.jsp">Zapomniałeś hasła?</a>
                     </div>
                 </div>
                 <button>Zaloguj</button>
@@ -97,7 +98,15 @@
 		}
 		
 		
-		
+		var status_new_success = document.getElementById("status_new").value;
+		if(status_new_success == "resetSuccess")
+		{
+			
+			swal("Udało się","Zmiana hasła przebiegła pomyślnie","success");
+			document.getElementById("status_new").value="";	
+
+		}
+
 
 	</script>
 </body>
