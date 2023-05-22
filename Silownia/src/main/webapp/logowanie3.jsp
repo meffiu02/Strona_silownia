@@ -24,17 +24,17 @@
         <div class="form-container register-container">
             <form method="post" action="register" accept-charset="UTF-8">
                 <h1>Rejestracja</h1>
-                <input type="text" name="nazwa-rej" placeholder="Nazwa" required>
-                <input type="email" name="email-rej" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
-                <input type="password" name="haslo-rej"placeholder="Hasło"required>
+                <input type="text" name="nazwa-rej" placeholder="Nazwa" required autocomplete="off">
+                <input type="email" name="email-rej" placeholder="Email" autocomplete="off" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+                <input type="password" name="haslo-rej"placeholder="Hasło"required autocomplete="off">
                 <button>Rejestracja</button>
             </form>
         </div>
         <div class="form-container login-container">
             <form method="post" action="login" accept-charset="UTF-8">
                 <h1>Logowanie</h1>
-                <input type="text" name="nazwa-log" placeholder="Nazwa użytkownika" required>
-                <input type="password" name="haslo-log" placeholder="Hasło"required>
+                <input type="text" name="nazwa-log" placeholder="Nazwa użytkownika" required autocomplete="off">
+                <input type="password" name="haslo-log" placeholder="Hasło"required autocomplete="off">
                 <div class="content">
                     <div class="checkbox">
                         <input type="checkbox" name="checkbox" id="checkbox">

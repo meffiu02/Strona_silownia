@@ -1,43 +1,97 @@
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Monoton&family=Permanent+Marker&family=Spectral:wght@300&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap');
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+body {
+  
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', cursive;
+  background-image: url("https://img.freepik.com/free-vector/gradient-pastel-color-background_23-2149360873.jpg?w=740&t=st=1681398945~exp=1681399545~hmac=4f0bf02443adba1d0e4087b422f541f90cfb16b2cbab1a0e14e5482bd590255f");
+}
 nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+  background-size: cover;
+  font-family: 'Poppins', cursive;
+  max-width: 100%;
+}
+ul li{
+display: inline;
+
+}
+nav a{
+  margin-right: 50px;
+  max-width: 100%;
+  text-align: center;
+}
+nav a:hover{
+  letter-spacing: 3px;
+}
+a{
+  color: rgb(255, 252, 252);
+  font-size: 17px;
+  text-decoration: none;
+  margin: 10px 0;
+  transition: 0.2s ease-in-out;
+  padding: 3px;
+  border-radius: 10px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  position: relative;
+  max-width: 100%;
+  font-family: 'Poppins', cursive;
+}
+a:hover{
+  color: #ffffff;
+}
+.container{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20%;
-    background-size: cover;
-    font-family: 'Kalam', cursive;
-    max-width: 100%;
+    flex-direction: column;
 }
-ul li{
-  display: inline;
- 
+
+select, input{
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 2px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
-nav a{
-    margin-right: 50px;
-    max-width: 100%;
-    text-align: center;
-}
-nav a:hover{
+button{
+    background-color: #333;
+    color: #fff;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    transition: 0.3s ease-in-out;
     letter-spacing: 3px;
-}
-a{
-    color: rgb(255, 252, 252);
-    font-size: 17px;
-    text-decoration: none;
-    margin: 15px 0;
-    transition: 0.2s ease-in-out;
-    padding: 3px;
-    border-radius: 10px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    position: relative;
-    max-width: 100%;
-}
-a:hover{
-    color: #ffffff;
-    border-bottom: 2px solid rgb(255, 255, 255);
-}
+    font-size: 15px;
+    font-family: 'Poppins', cursive;
+    margin-top: 10px;
+  
+  }
+  button:hover{
+    letter-spacing: 4px;
+  }
+  button:active{
+    transform: scale(0.95);
+  }
+  button:focus{
+    outline: none;
+  }
+  button[type="submit"]:hover {
+    background-color: #555;
+  }
+  button {
+    cursor: pointer;
+  }
 label {
     display: block;
     margin-bottom: 5px;

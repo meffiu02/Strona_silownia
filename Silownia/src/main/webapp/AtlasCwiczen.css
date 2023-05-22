@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@700&display=swap');
+
+body{
+    background-image: url("https://img.freepik.com/free-vector/gradient-pastel-color-background_23-2149360873.jpg?w=740&t=st=1681398945~exp=1681399545~hmac=4f0bf02443adba1d0e4087b422f541f90cfb16b2cbab1a0e14e5482bd590255f");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    background-size: cover;
+    font-family: 'Poppins', cursive;
+    max-width: 100%;
+  }
+  ul li{
+  display: inline;
+  
+  }
+  nav a{
+    margin-right: 50px;
+    max-width: 100%;
+    text-align: center;
+  }
+  nav a:hover{
+    letter-spacing: 3px;
+  }
+  a{
+    color: rgb(255, 252, 252);
+    font-size: 17px;
+    text-decoration: none;
+    margin: 10px 0;
+    transition: 0.2s ease-in-out;
+    padding: 3px;
+    border-radius: 10px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    position: relative;
+    max-width: 100%;
+  }
+  a:hover{
+    color: #ffffff;
+  }
+
+  .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+  }
+  .atlas{
+    flex-grow: 1;
+    height: 300px;
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 2px 3px 0px rgba(0,0, 0, 0.25);
+    border-radius: 10px;
+    transition: .2s all;
+    transform: scale(1);
+    
+    
+  }
+  .klatka{
+    background-image: url('https://img.freepik.com/darmowe-zdjecie/skupiajacy-sie-mezczyzna-robi-treningu-na-lawce-wagi_329181-14155.jpg?w=740&t=st=1684712639~exp=1684713239~hmac=4e6edb95fc53c79d4a8051b5aff2ffd0c9be0e95f8ba2fd0ec261cb893083a78');
+    background-position: center;
+    cursor: pointer;
+  }
+    .plecy{
+    background-image: url('https://img.freepik.com/darmowe-zdjecie/polnagi-mezczyzna-ciagnacy-sie-na-drazku-w-silowni_613910-16667.jpg?w=740&t=st=1684712207~exp=1684712807~hmac=1276cc058af74da76dace85241dd2e710a38f334b016f0b18af26b4e39954353');
+    background-position: center;
+    cursor: pointer;
+  }
+  .biceps{
+    background-image: url('https://img.freepik.com/darmowe-zdjecie/przystojny-wysportowany-mezczyzna-napina-miesnie-ze-sztanga-w-ciemnej-sali-gimnastycznej_651396-1082.jpg?w=740&t=st=1684712100~exp=1684712700~hmac=2260776e170c4cba8ebb59f3c057dad1c33bc8c883901e3cdea81c47cdd78a1a');
+    background-position: center;
+    cursor: pointer;
+  }
+  .brzuch{
+    background-image: url('https://img.freepik.com/darmowe-zdjecie/praca-na-miesniach-brzucha-nie-jest-latwa_329181-14162.jpg?w=740&t=st=1684712159~exp=1684712759~hmac=d1e389d48a6df656b3bab3acaba4c10e9880b979c17d95e5ae2c15af920e6e45');
+    background-position: center;
+    cursor: pointer;
+  }
+  .barki{
+    background-image: url('https://img.freepik.com/darmowe-zdjecie/silownia-przystojny-mezczyzna-podczas-treningu_144627-6218.jpg?w=740&t=st=1684712311~exp=1684712911~hmac=7b095be5a76674db4e7a97b444d0243d3f3a11890123e121e1719a7b537d9d3b');
+    background-position: center;
+    cursor: pointer;
+  }
+  .triceps{
+    background-image: url('https://img.freepik.com/premium-zdjecie/mlody-kulturysta-wykonujacy-ciezkie-cwiczenia-na-triceps_600776-15436.jpg?w=740');
+    background-position: center;
+    cursor: pointer;
+  }
+  .category {
+    display: flex;
+    justify-content: center;
+    margin-top: 290px;
+    background-color: gray;
+    padding-bottom: 15px;
+    font-size: 24px;
+    font-family: 'Encode+Sans', cursive;
+    color: rgb(255, 252, 252);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
+  .container:hover .atlas:hover{
+    transform: scale(1);
+    filter: blur(2px);
+    opacity: .9;
+    box-shadow: 0 0 20px #229999;
+}
+.footer {
+    position: relative;
+    margin-top: 35px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 15px;
+  }
+span {
+    margin-right: 80px;
+  }
+i{
+    margin-right: 10px;
+}

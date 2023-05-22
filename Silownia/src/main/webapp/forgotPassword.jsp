@@ -1,3 +1,4 @@
+ <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <!doctype html>
 <html>
 <head>
@@ -11,35 +12,53 @@
 <script type='text/javascript'
 	src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <style>
+ @import url("https://fonts.googleapis.com/css2?family=Poppins");
 body {
-	background-position: center;
-	background-color: #eee;
-	background-repeat: no-repeat;
-	background-size: cover;
-	color: #505050;
-	font-family: "Rubik", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	font-weight: normal;
-	line-height: 1.5;
-	text-transform: none
-}
+	
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow:  hidden;
+  background-image: url("https://img.freepik.com/free-vector/gradient-pastel-color-background_23-2149360873.jpg?w=740&t=st=1681398945~exp=1681399545~hmac=4f0bf02443adba1d0e4087b422f541f90cfb16b2cbab1a0e14e5482bd590255f");
 
+}
+h2{
+    font-family: 'Poppins', cursive;
+    text-align: center;
+}
+h3{
+    font-family: 'Poppins', cursive;
+    text-align: center;
+}
 .forgot {
-	background-color: #fff;
+	background-color: aqua;
 	padding: 12px;
-	border: 1px solid #dfdfdf
+	border: 1px solid #dfdfdf;
+    border-radius: 10px;
+    font-family: 'Poppins', cursive;
 }
 
 .padding-bottom-3x {
 	padding-bottom: 72px !important
 }
-
-.card-footer {
-	background-color: #fff
+.card{
+    padding: 20px;
+    
 }
-
+.card-footer {
+	background-color: #fff;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .btn {
-	font-size: 13px
+    font-size: 20px;
+    margin-top: 10px;
 }
 
 .form-control:focus {
@@ -47,7 +66,8 @@ body {
 	background-color: #fff;
 	border-color: #76b7e9;
 	outline: 0;
-	box-shadow: 0 0 0 0px #28a745
+	box-shadow: 0 0 0 0px #28a745;
+    font-family: 'Poppins', cursive;
 }
 </style>
 </head>
@@ -56,33 +76,27 @@ body {
 		<div class="row justify-content-center">
 			<div class="col-lg-8 col-md-10">
 				<div class="forgot">
-					<h2>Forgot your password?</h2>
-					<p>Change your password in three easy steps. This will help you
-						to secure your password!</p>
+					<h2>Zapomniałeś hasła?</h2>
+					<p>Zmień swoje hasło w 3 krokach. Pomoże Ci to bezpiecznie zmienić hasło!</p>
 					<ol class="list-unstyled">
-						<li><span class="text-primary text-medium">1. </span>Enter
-							your email address below.</li>
-						<li><span class="text-primary text-medium">2. </span>Our
-							system will send you an OTP to your email</li>
-						<li><span class="text-primary text-medium">3. </span>Enter the OTP on the 
-						next page</li>
+						<li><span class="text-primary text-medium">1. </span>Wpisz poniżej swój adres e-mail.</li>
+						<li><span class="text-primary text-medium">2. </span>Otrzymasz na adres e-mail kod OTP</li>
+						<li><span class="text-primary text-medium">3. </span>Wpisz swój indywidualny kod OTP na następnej stronie</li>
 					</ol>
 				</div>
 				<form class="card mt-4" action="forgotPassword" method="POST">
 					<div class="card-body">
 						<div class="form-group">
-							<label for="email-for-pass">Enter your email address</label> <input
-								class="form-control" type="text" name="email" id="email-for-pass" required=""><small
-								class="form-text text-muted">Enter the registered email address . Then we'll
-								email a OTP to this address.</small>
+                            <h3>Wprowadź swój adres e-mail</h3>
+						<input class="form-control" type="text" name="email" id="email-for-pass" required=""><small
+								class="form-text text-muted">Wprowadź zarejestrowany adres e-mail. Następnie wyślemy e-mailem hasło jednorazowe na ten adres.</small>
 						</div>
+                        <button class="btn btn-success" type="submit">Wyślij kod</button>
+						<button class="btn btn-danger" type="submit">Wróć do logowania</button>
 					</div>
-					<div class="card-footer">
-						<button class="btn btn-success" type="submit">Get New
-							Password</button>
-						<button class="btn btn-danger" type="submit">Back to
-							Login</button>
-					</div>
+					
+						
+					
 				</form>
 			</div>
 		</div>

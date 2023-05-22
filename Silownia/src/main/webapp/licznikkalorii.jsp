@@ -20,13 +20,14 @@ if(session.getAttribute("nazwa-log")==null)
 			<li><a href="wyborkalkulatora.jsp"><b>Kalkulatory</b></a></li>
 			<li><a href="licznikkalorii.jsp"><b>Licznik kalorii</b></a></li>
 			<li> <a href="#"><b>Pomiary</b></a></li>
-			<li><a href="#"><b>Atlas ćwiczeń</b></a></li>
+			<li><a href="AtlasCwiczen.jsp"><b>Atlas ćwiczeń</b></a></li>
 			 <li><a href="kontakt.jsp"><b>Kontakt</b></a></li>
 			<li><a><%=session.getAttribute("nazwa-log") %></a></li>
 			<li><a href="logout"><b>Wyloguj</b></a></li>
 
 		</ul>
 	</nav>
+	<div class="container">
 	<h1>Licznik kalorii</h1>
 
 	<label>Wybierz produkt:</label>
@@ -60,10 +61,10 @@ if(session.getAttribute("nazwa-log")==null)
 	</ul>
 	<button id="reset-button">Wyzeruj</button>
 	<div>
-
-	<h1>Jedzenie </h1>
+</div>
     
-    <h3>Lista wszystkich dostęnych produktów </h3>
+    <h1>Lista wszystkich dostęnych produktów </h1>
+
     
     
     <table>
