@@ -29,11 +29,11 @@ if(session.getAttribute("nazwa-log")==null)
         </ul>
     </nav>
     <div class="container">
-        <div class="kalkulator bmi">
+        <div class="kalkulator bmi" onclick="window.location.href = 'bmi.jsp';" style=" cursor: pointer;">
             <h1 class="h1">BMI</h1>
             <button class="button"><a href="bmi.jsp">Oblicz swoje BMI</a></button>
         </div>
-        <div class="kalkulator bmr">
+        <div class="kalkulator bmr" onclick="window.location.href = 'bmr.jsp';" style=" cursor: pointer;">
             <h1 class="h1">BMR</h1>
             <button class="button"><a href="bmr.jsp">Oblicz swoje BMR</a></button>
         </div>

@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+body{
+    background-image: url("https://img.freepik.com/free-vector/gradient-pastel-color-background_23-2149360873.jpg?w=740&t=st=1681398945~exp=1681399545~hmac=4f0bf02443adba1d0e4087b422f541f90cfb16b2cbab1a0e14e5482bd590255f");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    background-size: cover;
+    font-family: 'Poppins', cursive;
+    max-width: 100%;
+  }
+  ul li{
+  display: inline;
+  
+  }
+  nav a{
+    margin-right: 50px;
+    max-width: 100%;
+    text-align: center;
+  }
+  nav a:hover{
+    letter-spacing: 3px;
+  }
+  a{
+    color: rgb(255, 252, 252);
+    font-size: 17px;
+    text-decoration: none;
+    margin: 10px 0;
+    transition: 0.2s ease-in-out;
+    padding: 3px;
+    border-radius: 10px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    position: relative;
+    max-width: 100%;
+  }
+  a:hover{
+    color: #ffffff;
+  }
+  .zawartosc{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    grid-template-rows:repeat(3, 1fr);
+}
+.obrazek1{
+    background-image:url('barki1.png');
+    background-repeat:no-repeat;
+    background-size:100%;
+    background-position:center;
+    height:600px;
+}
+.obrazek2{
+    background-image:url('barki2.png');
+    background-repeat:no-repeat;
+    background-size:100%;
+    background-position:center;
+    height:600px;
+}
+.obrazek3{
+    background-image:url('barki3.png');
+    background-repeat:no-repeat;
+    background-size:100%;
+    background-position:center;
+    height:600px;
+}
+.obrazek4{
+    background-image:url('barki4.png');
+    background-repeat:no-repeat;
+    background-size:100%;
+    background-position:center;
+    height:600px;
+}
+h2,h3{
+    margin-top: 30px;
+    text-align: center;
+}
+.tekst1, 
+.tekst2,
+.tekst3,
+.tekst4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;  
+}
+.opis{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-left: 60px;
+  margin-right: 60px;
+  font-family: 'Poppins', cursive;
+}
+  .footer {
+    position: relative;
+    margin-top: 35px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 15px;
+  }
+span {
+    margin-right: 80px;
+  }
+i{
+    margin-right: 10px;
+}

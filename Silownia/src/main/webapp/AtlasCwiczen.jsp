@@ -22,22 +22,22 @@
     </nav>
 
     <div class="container">
-        <div class="atlas klatka" onclick="window.location.href = '#';">
+        <div class="atlas klatka" onclick="window.location.href = 'klatka.jsp';">
         <p class="category"><b>KLATKA PIERSIOWA</b></p>
         </div>
-        <div class="atlas plecy" onclick="window.location.href = '#';">
+        <div class="atlas plecy" onclick="window.location.href = 'plecy.jsp';">
         <p class="category"><b>PLECY</b></p>
         </div>
-        <div class="atlas barki" onclick="window.location.href = '#';">
+        <div class="atlas barki" onclick="window.location.href = 'barki.jsp';">
         <p class="category"><b>BARKI</b></p>
         </div>
-        <div class="atlas brzuch" onclick="window.location.href = '#';">
+        <div class="atlas brzuch" onclick="window.location.href = 'brzuch.jsp';">
         <p class="category"><b>BRZUCH</b></p>
         </div>
-        <div class="atlas triceps" onclick="window.location.href = '#';">
+        <div class="atlas triceps" onclick="window.location.href = 'triceps.jsp';">
         <p class="category"><b>TRICEPS</b></p>
         </div>
-        <div class="atlas biceps" onclick="window.location.href = '#';">
+        <div class="atlas biceps" onclick="window.location.href = 'biceps.jsp';">
         <p class="category"><b>BICEPS</b></p>
         </div>
   </div>
