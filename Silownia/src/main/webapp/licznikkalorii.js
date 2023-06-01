@@ -43,50 +43,62 @@ let fatSum = 0;
 let carbsSum = 0;
 
 addButton.addEventListener("click", () => {
-const product = productList.value;
-const quantity = Number(quantityInput.value);
+    const product = productList.value;
+    const quantity = Number(quantityInput.value);
 
-if (product && quantity) {
-    const productInfo = productData[product];
-    const calories = productInfo.calories * quantity / 100;
-    const protein = productInfo.protein * quantity / 100;
-    const fat = productInfo.fat * quantity / 100;
-    const carbs = productInfo.carbs * quantity / 100;
+    if (product && quantity > 0) {
+        const productInfo = productData[product];
+        const calories = productInfo.calories * quantity / 100;
+        const protein = productInfo.protein * quantity / 100;
+        const fat = productInfo.fat * quantity / 100;
+        const carbs = productInfo.carbs * quantity / 100;
 
-    caloriesOutput.textContent = calories.toFixed(1);
-    proteinOutput.textContent = protein.toFixed(1);
-    fatOutput.textContent = fat.toFixed(1);
-    carbsOutput.textContent = carbs.toFixed(1);
+        caloriesOutput.textContent = calories.toFixed(1);
+        proteinOutput.textContent = protein.toFixed(1);
+        fatOutput.textContent = fat.toFixed(1);
+        carbsOutput.textContent = carbs.toFixed(1);
 
-    caloriesSum += calories;
-    proteinSum += protein;
-    fatSum += fat;
-    carbsSum += carbs;
+        caloriesSum += calories;
+        proteinSum += protein;
+        fatSum += fat;
+        carbsSum += carbs;
 
-    caloriesSumOutput.textContent = caloriesSum.toFixed(1);
-    proteinSumOutput.textContent = proteinSum.toFixed(1);
-    fatSumOutput.textContent = fatSum.toFixed(1);
-    carbsSumOutput.textContent = carbsSum.toFixed(1);
-}
+        caloriesSumOutput.textContent = caloriesSum.toFixed(1);
+        proteinSumOutput.textContent = proteinSum.toFixed(1);
+        fatSumOutput.textContent = fatSum.toFixed(1);
+        carbsSumOutput.textContent = carbsSum.toFixed(1);
+    } else {
+        if (!product) {
+            alert("Wybierz produkt");
+        }
+        else if(!quantity){
+			alert("Należy wypełnić puste pole");
+		}
+        else if (quantity <= 0) {
+            alert("Wprowadź prawidłową wartość większą od zera.");
+        }
+       
+    }
 });
+
 resetButton.addEventListener("click", () => {
-caloriesSum = 0;
-proteinSum = 0;
-fatSum = 0;
-carbsSum = 0;
+    caloriesSum = 0;
+    proteinSum = 0;
+    fatSum = 0;
+    carbsSum = 0;
 
-caloriesSumOutput.textContent = "0";
-proteinSumOutput.textContent = "0";
-fatSumOutput.textContent = "0";
-carbsSumOutput.textContent = "0";
+    caloriesSumOutput.textContent = "0";
+    proteinSumOutput.textContent = "0";
+    fatSumOutput.textContent = "0";
+    carbsSumOutput.textContent = "0";
 
-// Zresetuj także wyjście wartości dla ostatnio dodanego produktu
-caloriesOutput.textContent = "0";
-proteinOutput.textContent = "0";
-fatOutput.textContent = "0";
-carbsOutput.textContent = "0";
+    // Zresetuj także wyjście wartości dla ostatnio dodanego produktu
+    caloriesOutput.textContent = "0";
+    proteinOutput.textContent = "0";
+    fatOutput.textContent = "0";
+    carbsOutput.textContent = "0";
 
-// Zresetuj wybór produktu i wartość ilości
-productList.selectedIndex = 0;
-quantityInput.value = "100";
+    // Zresetuj wybór produktu i wartość ilości
+    productList.selectedIndex = 0;
+    quantityInput.value = "100";
 });

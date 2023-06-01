@@ -19,7 +19,6 @@ if(session.getAttribute("nazwa-log")==null)
 			<li><a href="main.jsp"><b>Strona główna</b></a></li>
 			<li><a href="wyborkalkulatora.jsp"><b>Kalkulatory</b></a></li>
 			<li><a href="licznikkalorii.jsp"><b>Licznik kalorii</b></a></li>
-			<li> <a href="#"><b>Pomiary</b></a></li>
 			<li><a href="AtlasCwiczen.jsp"><b>Atlas ćwiczeń</b></a></li>
 			 <li><a href="kontakt.jsp"><b>Kontakt</b></a></li>
 			<li><a><%=session.getAttribute("nazwa-log") %></a></li>
