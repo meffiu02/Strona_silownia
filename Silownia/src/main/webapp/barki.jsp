@@ -17,7 +17,7 @@
         <a href="#"><b>Pomiary</b></a>
         <a href="AtlasCwiczen.jsp"><b>Atlas Ćwiczeń</b></a>
         <a href="kontakt.jsp"><b>Kontakt</b></a>
-        <a><%=session.getAttribute("nazwa-log") %></a>
+        <a href="uzytkownik.jsp"><%=session.getAttribute("nazwa-log") %></a>
         <a href="logout"><b>Wyloguj</b></a>
     </nav>
 

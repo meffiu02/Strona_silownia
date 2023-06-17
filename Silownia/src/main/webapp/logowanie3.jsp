@@ -26,7 +26,7 @@
                 <h1>Rejestracja</h1>
                 <input type="text" name="nazwa-rej" placeholder="Nazwa" required autocomplete="off">
                 <input type="email" name="email-rej" placeholder="Email" autocomplete="off" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
-                <input type="password" name="haslo-rej"placeholder="Hasło"required autocomplete="off">
+               <input placeholder="Hasło:" type="password" name="haslo-rej" required minlength="8" pattern="^(?=.*[A-Z])(?=.*[@#$%^&+=]).*$" autocomplete="off" title="Hasło musi mieć minimum 8 znaków, zawierać wielką literę oraz znak specjalny.">
                 <button>Rejestracja</button>
             </form>
         </div>
@@ -37,8 +37,8 @@
                 <input type="password" name="haslo-log" placeholder="Hasło"required autocomplete="off">
                 <div class="content">
                     <div class="checkbox">
-                        <input type="checkbox" name="checkbox" id="checkbox">
-                        <label>Zapamiętaj mnie</label>
+                       
+                        
                     </div>
                     
                     <div class="pass-link">

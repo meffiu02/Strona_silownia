@@ -22,8 +22,8 @@ if(session.getAttribute("nazwa-log")==null)
             <li><a class="odnosniki"href="wyborkalkulatora.jsp"><b>Kalkulatory</b></a></li>
             <li><a class="odnosniki"href="licznikkalorii.jsp"><b>Licznik kalorii</b></a></li>
             <li><a class="odnosniki"href="AtlasCwiczen.jsp"><b>Atlas ćwiczeń</b></a></li>
-             <li><a href="#"><b>Kontakt</b></a></li>
-            <li><a><%=session.getAttribute("nazwa-log") %></a></li>
+             <li><a href="kontakt.jsp"><b>Kontakt</b></a></li>
+            <li><a href="uzytkownik.jsp"><%=session.getAttribute("nazwa-log") %></a></li>
             <li><a href="logout"><b>Wyloguj</b></a></li>
         </ul>
     </nav>

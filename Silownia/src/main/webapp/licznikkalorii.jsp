@@ -1,11 +1,4 @@
-
-<%
-if(session.getAttribute("nazwa-log")==null)
-	response.sendRedirect("logowanie3.jsp");
-%>
-
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
@@ -20,104 +13,200 @@ if(session.getAttribute("nazwa-log")==null)
 			<li><a href="wyborkalkulatora.jsp"><b>Kalkulatory</b></a></li>
 			<li><a href="licznikkalorii.jsp"><b>Licznik kalorii</b></a></li>
 			<li><a href="AtlasCwiczen.jsp"><b>Atlas ćwiczeń</b></a></li>
-			 <li><a href="kontakt.jsp"><b>Kontakt</b></a></li>
-			<li><a><%=session.getAttribute("nazwa-log") %></a></li>
+			<li><a href="kontakt.jsp"><b>Kontakt</b></a></li>
+			<li><a href="uzytkownik.jsp"><%=session.getAttribute("nazwa-log") %></a></li>
 			<li><a href="logout"><b>Wyloguj</b></a></li>
-
 		</ul>
 	</nav>
 	<div class="container">
-	<h1>Licznik kalorii</h1>
+		<h1>Licznik kalorii</h1>
 
-	<label>Wybierz produkt:</label>
-	<select id="product-list">
-		<option value="" disabled selected>Wybierz produkt</option>
-		<option value="jajko">Jajko</option>
-		<option value="mleko">Mleko</option>
-		<option value="kurczak">Kurczak</option>
-		<option value="ryz">Ryż</option>
-	</select>
+		<label>Wybierz produkt:</label>
+		<select id="product-list">
+			<option value="" disabled selected>Wybierz produkt</option>
+			<% 
+			try {
+				// Połączenie z bazą danych
+				String url = "jdbc:mysql://localhost:3306/licznik";
+				String user = "root";
+				String password = "P@ssw0rd";
+				Connection conn = DriverManager.getConnection(url, user, password);
 
-	<label>Ilość (w gramach):</label>
-	<input type="number" id="quantity-input" min="1" value="100">
+				// Zapytanie SQL
+				String sql = "SELECT * FROM jedzenie";
+				PreparedStatement ps = conn.prepareStatement(sql);
+				ResultSet rs = ps.executeQuery();
 
-	<button id="add-button">Dodaj</button>
+				// Wyświetlanie wyników zapytania
+				while (rs.next()) {
+					String produkt = rs.getString("produkty");
+					String kalorie = rs.getString("kalorie");
+					String bialko = rs.getString("bialko");
+					String tluszcz = rs.getString("tluszcz");
+					String weglowodany = rs.getString("weglowodany");
+			%>
+			<option value="<%= produkt %>" data-kalorie="<%= kalorie %>" data-bialko="<%= bialko %>" data-tluszcz="<%= tluszcz %>" data-weglowodany="<%= weglowodany %>"><%= produkt %></option>
+			<% 
+				}
+				// Zamykanie połączenia z bazą danych
+				rs.close();
+				ps.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			%>
+		</select>
 
-	<h2>Podsumowanie:</h2>
-	<ul>
-		<li>Kalorie: <span id="calories">0</span></li>
-		<li>Białko: <span id="protein">0</span> g</li>
-		<li>Tłuszcz: <span id="fat">0</span> g</li>
-		<li>Węglowodany: <span id="carbs">0</span> g</li>
-	</ul>
+		<label>Ilość (w gramach):</label>
+		<input type="number" id="quantity-input" min="1" value="100">
 
-	<h2>Suma:</h2>
-	<ul>
-		<li>Kalorie: <span id="calories-sum">0</span></li>
-		<li>Białko: <span id="protein-sum">0</span> g</li>
-		<li>Tłuszcz: <span id="fat-sum">0</span> g</li>
-		<li>Węglowodany: <span id="carbs-sum">0</span> g</li>
-	</ul>
-	<button id="reset-button">Wyzeruj</button>
-	<div>
-</div>
-    
-    <h1>Lista wszystkich dostęnych produktów </h1>
+		<button id="add-button">Dodaj</button>
 
-    
-    
-    <table>
-        <tr>
-       		 <th>Lp.</th>
-            <th>Produkt</th>
-            <th>Kalorie</th>
-            <th>Białko</th>
-            <th>Tłuszcz</th>
-            <th>Węglowodany</th>
-        </tr>
-        <% 
-            try {
-                // Połączenie z bazą danych
-                String url = "jdbc:mysql://localhost:3306/licznik";
-                String user = "root";
-                String password = "P@ssw0rd";
-                Connection conn = DriverManager.getConnection(url, user, password);
+		<h2>Podsumowanie:</h2>
+		<ul>
+			<li>Kalorie: <span id="calories">0</span></li>
+			<li>Białko: <span id="protein">0</span> g</li>
+			<li>Tłuszcz: <span id="fat">0</span> g</li>
+			<li>Węglowodany: <span id="carbs">0</span> g</li>
+		</ul>
 
-                // Zapytanie SQL
-                String sql = "SELECT * FROM jedzenie";
-                PreparedStatement ps = conn.prepareStatement(sql);
-                ResultSet rs = ps.executeQuery();
-
-                // Wyświetlenie wyników zapytania
-                int i=0;
-                while (rs.next()) { i++;
-                    String produkty = rs.getString("produkty");
-                    String kalorie = rs.getString("kalorie");
-                    String bialko = rs.getString("bialko");
-                    String tluszcz = rs.getString("tluszcz");
-                    String weglowodany = rs.getString("weglowodany");
-        %>
-            <tr>
-            	<td><%= i %></td>
-                <td><%= produkty %></td>
-                <td><%= kalorie %></td>
-                <td><%= bialko %></td>
-                <td><%= tluszcz %></td>
-                <td><%= weglowodany %></td>
-            </tr>
-        <% 
-                }
-                // Zamykanie połączenia z bazą danych
-                rs.close();
-                ps.close();
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        %>
-    </table>
+		<h2>Suma:</h2>
+		<ul>
+			<li>Kalorie: <span id="calories-sum">0</span></li>
+			<li>Białko: <span id="protein-sum">0</span> g</li>
+			<li>Tłuszcz: <span id="fat-sum">0</span> g</li>
+			<li>Węglowodany: <span id="carbs-sum">0</span> g</li>
+		</ul>
+		<button id="reset-button">Wyzeruj</button>
 	</div>
-	
-	<script src="licznikkalorii.js"></script>
+
+	<h1>Lista wszystkich dostępnych produktów</h1>
+
+	<table>
+		<tr>
+			<th>Lp.</th>
+			<th>Produkt</th>
+			<th>Kalorie</th>
+			<th>Białko</th>
+			<th>Tłuszcz</th>
+			<th>Węglowodany</th>
+		</tr>
+		<% 
+		try {
+			// Połączenie z bazą danych
+			String url = "jdbc:mysql://localhost:3306/licznik";
+			String user = "root";
+			String password = "P@ssw0rd";
+			Connection conn = DriverManager.getConnection(url, user, password);
+
+			// Zapytanie SQL
+			String sql = "SELECT * FROM jedzenie";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+
+			// Wyświetlanie wyników zapytania
+			int i = 0;
+			while (rs.next()) {
+				i++;
+				String produkty = rs.getString("produkty");
+				String kalorie = rs.getString("kalorie");
+				String bialko = rs.getString("bialko");
+				String tluszcz = rs.getString("tluszcz");
+				String weglowodany = rs.getString("weglowodany");
+		%>
+		<tr>
+			<td><%= i %></td>
+			<td><%= produkty %></td>
+			<td><%= kalorie %></td>
+			<td><%= bialko %></td>
+			<td><%= tluszcz %></td>
+			<td><%= weglowodany %></td>
+		</tr>
+		<% 
+			}
+			// Zamykanie połączenia z bazą danych
+			rs.close();
+			ps.close();
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		%>
+	</table>
+
+<script>
+    document.getElementById("add-button").addEventListener("click", function () {
+        var productList = document.getElementById("product-list");
+        var selectedOption = productList.options[productList.selectedIndex];
+
+        if (!selectedOption.value) {
+            alert("Wybierz produkt.");
+            return;
+        }
+
+        var quantityInput = document.getElementById("quantity-input");
+        var grams = parseInt(quantityInput.value);
+        if (isNaN(grams) || grams <= 0) {
+            alert("Podaj prawidłową ilość (większą od zera).");
+            return;
+        }
+
+        var caloriesSpan = document.getElementById("calories");
+        var proteinSpan = document.getElementById("protein");
+        var fatSpan = document.getElementById("fat");
+        var carbsSpan = document.getElementById("carbs");
+
+        var caloriesSumSpan = document.getElementById("calories-sum");
+        var proteinSumSpan = document.getElementById("protein-sum");
+        var fatSumSpan = document.getElementById("fat-sum");
+        var carbsSumSpan = document.getElementById("carbs-sum");
+
+        var calories = parseInt(caloriesSpan.innerText);
+        var protein = parseInt(proteinSpan.innerText);
+        var fat = parseInt(fatSpan.innerText);
+        var carbs = parseInt(carbsSpan.innerText);
+
+        calories += grams / 100 * parseInt(selectedOption.getAttribute("data-kalorie"));
+        protein += grams / 100 * parseInt(selectedOption.getAttribute("data-bialko"));
+        fat += grams / 100 * parseInt(selectedOption.getAttribute("data-tluszcz"));
+        carbs += grams / 100 * parseInt(selectedOption.getAttribute("data-weglowodany"));
+
+        caloriesSumSpan.innerText = parseInt(caloriesSumSpan.innerText) + calories;
+        proteinSumSpan.innerText = parseInt(proteinSumSpan.innerText) + protein;
+        fatSumSpan.innerText = parseInt(fatSumSpan.innerText) + fat;
+        carbsSumSpan.innerText = parseInt(carbsSumSpan.innerText) + carbs;
+
+        caloriesSpan.innerText = calories;
+        proteinSpan.innerText = protein;
+        fatSpan.innerText = fat;
+        carbsSpan.innerText = carbs;
+
+        quantityInput.value = "";
+        productList.selectedIndex = 0;
+    });
+
+    document.getElementById("reset-button").addEventListener("click", function () {
+        var caloriesSpan = document.getElementById("calories");
+        var proteinSpan = document.getElementById("protein");
+        var fatSpan = document.getElementById("fat");
+        var carbsSpan = document.getElementById("carbs");
+
+        var caloriesSumSpan = document.getElementById("calories-sum");
+        var proteinSumSpan = document.getElementById("protein-sum");
+        var fatSumSpan = document.getElementById("fat-sum");
+        var carbsSumSpan = document.getElementById("carbs-sum");
+
+        caloriesSpan.innerText = "0";
+        proteinSpan.innerText = "0";
+        fatSpan.innerText = "0";
+        carbsSpan.innerText = "0";
+
+        caloriesSumSpan.innerText = "0";
+        proteinSumSpan.innerText = "0";
+        fatSumSpan.innerText = "0";
+        carbsSumSpan.innerText = "0";
+    });
+</script>
 </body>
 </html>

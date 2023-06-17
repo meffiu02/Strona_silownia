@@ -92,7 +92,7 @@ h3{
 								class="form-text text-muted">Wprowadź zarejestrowany adres e-mail. Następnie wyślemy e-mailem hasło jednorazowe na ten adres.</small>
 						</div>
                         <button class="btn btn-success" type="submit">Wyślij kod</button>
-						<button class="btn btn-danger" type="submit" onclick="window.location.href = 'logowanie3.jsp';">Wróć do logowania</button>
+						<button class="btn btn-danger" type="submit" onclick="window.location.href = 'logowanie3.jsp';return false;">Wróć do logowania</button>
 					</div>
 					
 						

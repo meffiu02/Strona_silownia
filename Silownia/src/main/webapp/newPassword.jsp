@@ -79,7 +79,7 @@
 								<div class="form-group row justify-content-center px-3">
 									<div class="col-9 px-0">
 										<input type="password" name="password" placeholder="&#xf084; &nbsp; Nowe hasło"
-											class="form-control border-info placeicon">
+											class="form-control border-info placeicon" minlength="8" pattern="^(?=.*[A-Z])(?=.*[@#$%^&+=]).*$" autocomplete="off" title="Hasło musi mieć minimum 8 znaków, zawierać wielką literę oraz znak specjalny.">
 									</div>
 								</div>
 								<!-- Password Input -->
@@ -87,7 +87,7 @@
 									<div class="col-9 px-0">
 										<input type="password" name="confPassword"
 											placeholder="&#xf084; &nbsp; Powtórz nowe hasło"
-											class="form-control border-info placeicon">
+											class="form-control border-info placeicon" minlength="8" pattern="^(?=.*[A-Z])(?=.*[@#$%^&+=]).*$" autocomplete="off" title="Hasło musi mieć minimum 8 znaków, zawierać wielką literę oraz znak specjalny.">
 									</div>
 								</div>
 							
