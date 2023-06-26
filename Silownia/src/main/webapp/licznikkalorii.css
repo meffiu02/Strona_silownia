@@ -30,11 +30,11 @@ nav a{
   text-align: center;
 }
 nav a:hover{
-  letter-spacing: 3px;
+  letter-spacing: 1px;
 }
 a{
   color: rgb(255, 252, 252);
-  font-size: 17px;
+  font-size: 16px;
   text-decoration: none;
   margin: 10px 0;
   transition: 0.2s ease-in-out;
@@ -115,4 +115,8 @@ table {
    
     tr:hover {
   border-bottom: 2px solid red;
+}
+h1, h3{
+	text-align: center;
+	
 }

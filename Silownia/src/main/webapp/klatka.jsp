@@ -6,20 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="klatka.css">
-    <title>Atlas ćwiczeń</title>
+     <link rel="shortcut icon" href="gym.ico" type="image/x-icon">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Klatka piersiowa</title>
 </head>
 <body>
 
     <nav>
         <a href="main.jsp"><b>Strona główna</b></a>
-        <a href="wyborkalkulatora.jsp"><b>Kalkulatory</b></a>
+        <a href="wyborkalkulatora.jsp"><b>Kalkulator BMI i BMR</b></a>
+        <a href="tetno.jsp"><b>Kalkulator tętna</b></a>
         <a href="licznikkalorii.jsp"><b>Licznik kalorii</b></a>
         <a href="AtlasCwiczen.jsp"><b>Atlas Ćwiczeń</b></a>
         <a href="kontakt.jsp"><b>Kontakt</b></a>
         <a href="uzytkownik.jsp"><%=session.getAttribute("nazwa-log") %></a>
         <a href="logout"><b>Wyloguj</b></a>
     </nav>
+	
+<div class="opis">
+	<h2>Mięśnie klatki piersiowej</h2>
+  <p>Mięśnie klatki piersiowej odgrywają kluczową rolę w utrzymaniu dobrej postawy ciała, stabilizacji górnej części tułowia oraz wykonywaniu różnorodnych ruchów ramion. Wzmacnianie mięśni klatki piersiowej może przyczynić się do poprawy siły, wydolności oraz zapobiegania bólom i urazom w tej okolicy.</p>
 
+  <h2>Mięsień piersiowy większy (pectoralis major)</h2>
+  <p>Jest to największy mięsień klatki piersiowej, który rozciąga się od mostka i żebra do kości ramiennej. Odpowiada za przyciąganie ramion do środka, unoszenie ramion do przodu, a także za ruchy związane z obracaniem i wypychaniem przedmiotów z rąk.</p>
+
+  <h2>Mięsień piersiowy mniejszy (pectoralis minor)</h2>
+  <p>Ten mięsień znajduje się pod mięśniem piersiowym większym i przyczepia się do łopatki. Jego główną funkcją jest obniżanie i obracanie łopatki, co jest istotne przy wykonywaniu ruchów ramion i podnoszeniu przedmiotów.</p>
+
+  <h2>Mięśnie naramienne (m. deltoides)</h2>
+  <p>Mimo że mięśnie naramienne są głównie umiejscowione na ramionach, mają również znaczący wpływ na klatkę piersiową. Mięsień naramienny przedni (deltoid anterior) odpowiada za unoszenie ramion do przodu, mięsień naramienny środkowy (deltoid medial) za unoszenie ramion na boki, natomiast mięsień naramienny tylny (deltoid posterior) za unoszenie ramion do tyłu. Te ruchy są często wykonywane w połączeniu z ruchami klatki piersiowej, co czyni mięśnie naramienne ważnymi dla stabilizacji i mobilności tej okolicy.</p>
+
+  <h2>Mięśnie międzyżebrowe (intercostal muscles)</h2>
+  <p>Mięśnie międzyżebrowe znajdują się między żebrami, a ich główną rolą jest wspomaganie oddychania poprzez unoszenie i opuszczanie żeber. Wzmacnianie tych mięśni może przyczynić się do poprawy wydolności układu oddechowego oraz stabilizacji klatki piersiowej.</p>
+
+  <p>Podsumowując, odpowiednie wzmacnianie mięśni klatki piersiowej jest istotne dla utrzymania dobrej postawy, stabilności tułowia oraz wykonywania różnorodnych ruchów ramion. Regularne ćwiczenia ukierunkowane na te mięśnie mogą przyczynić się do poprawy siły, wydolności oraz zapobiegania bólom i urazom w okolicach klatki piersiowej.</p>
+   </div>
     <div class="zawartosc">
          <div class="tekst1">
             <h2>WYCISKANIE NA ŁAWCE PŁASKIEJ</h2>

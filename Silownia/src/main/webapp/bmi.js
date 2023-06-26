@@ -1,4 +1,3 @@
-
 // Pobranie elementów formularza BMI
 const formBmi = document.querySelector('#bmi form');
 const weightInput = formBmi.querySelector('input[name="waga"]');
@@ -10,18 +9,27 @@ function calculateBmi(weight, height) {
   const heightMeters = height / 100;
   const bmi = weight / (heightMeters ** 2);
   let bmiType;
-   // Sprawdzenie, czy pola formularza są puste
-   if (weightInput.value === '' || heightInput.value === '') {
+
+  // Sprawdzenie, czy pola formularza są puste
+  if (weightInput.value === '' || heightInput.value === '') {
     alert('Proszę uzupełnić wszystkie pola formularza. ');
     return;
   }
   
+  // Sprawdzenie, czy waga i wzrost są dodatnie
+  if (weight <= 0 || height <= 0) {
+    alert("Wartości waga i wzrost muszą być dodatnie.");
+    return;
+  }
+  
+  // Sprawdzenie, czy wzrost nie przekracza 300 cm
+  if (height > 300) {
+    alert("Maksymalny dopuszczalny wzrost to 300 cm.");
+    heightInput.value = "";
+    heightInput.focus();
+    return;
+  }
 
- // Sprawdzenie, czy wagi i wzrost są dodatnie
- if (weight <= 0 || height <= 0) {
-  alert("Wartości waga i wzrost muszą być dodatnie.");
-  return;
-}
   if (bmi < 18.5) {
     bmiType = 'niedowagę';
   } else if (bmi >= 18.5 && bmi < 25) {
@@ -43,4 +51,3 @@ formBmi.addEventListener('submit', function(event) {
   const [bmi, bmiType] = calculateBmi(weight, height);
   resultBmi.textContent = `${bmi} oznacza to ${bmiType}`;
 });
-

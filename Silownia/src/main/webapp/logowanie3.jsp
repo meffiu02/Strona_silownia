@@ -11,6 +11,7 @@
     <meta name="author" content="Mateusz Jeżak" />
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet">
     <link rel="stylesheet" href="logowanie3.css"> 
+     <link rel="shortcut icon" href="gym.ico" type="image/x-icon">
 
 </head>
 

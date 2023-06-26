@@ -39,11 +39,11 @@ nav a{
   text-align: center;
 }
 nav a:hover{
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 a{
   color: rgb(255, 252, 252);
-  font-size: 17px;
+  font-size: 16px;
   text-decoration: none;
   margin: 10px 0;
   transition: 0.2s ease-in-out;

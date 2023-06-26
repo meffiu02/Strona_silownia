@@ -12,7 +12,8 @@ if(session.getAttribute("nazwa-log")==null)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Mateusz Jeżak" />
     <link rel="stylesheet" href="main.css">
-    
+    <link rel="shortcut icon" href="gym.ico" type="image/x-icon">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Strona główna</title>
 </head>
 
@@ -20,7 +21,8 @@ if(session.getAttribute("nazwa-log")==null)
 
         <nav>
             <a href="#"><b>Strona główna</b></a>
-            <a href="wyborkalkulatora.jsp"><b>Kalkulatory</b></a>
+            <a href="wyborkalkulatora.jsp"><b>Kalkulator BMI i BMR</b></a>
+            <a href="tetno.jsp"><b>Kalkulator tętna</b></a>
             <a href="licznikkalorii.jsp"><b>Licznik kalorii</b></a>
             <a href="AtlasCwiczen.jsp"><b>Atlas Ćwiczeń</b></a>
             <a href="kontakt.jsp"><b>Kontakt</b></a>
@@ -29,7 +31,7 @@ if(session.getAttribute("nazwa-log")==null)
         </nav>
         <div class="container">
             <div class="cytat">
-                <h1 class="cytat_pierwsza"> NIGDY SIĘ NIE PODDAWAJ</h1> 
+                <h1 class="cytat_pierwsza"> NIGDY SIĘ NIE PODDAWAJ</h1><br>
                 <h2 class="cytat_druga">NA WIELKIE RZECZY POTRZEBA CZASU</h2>
             </div>
             <div class="opis">

@@ -4,13 +4,15 @@
 <html>
 <head>
 	<title>Licznik kalorii</title>
+	<link rel="shortcut icon" href="gym.ico" type="image/x-icon">
 	<link rel="stylesheet" href="licznikkalorii.css">
 </head>
 <body>
 	<nav> 
 		<ul>
 			<li><a href="main.jsp"><b>Strona główna</b></a></li>
-			<li><a href="wyborkalkulatora.jsp"><b>Kalkulatory</b></a></li>
+			<li><a href="wyborkalkulatora.jsp"><b>Kalkulator BMI i BMR</b></a></li>
+			<li><a href="tetno.jsp"><b>Kalkulator tętna</b></a></li>
 			<li><a href="licznikkalorii.jsp"><b>Licznik kalorii</b></a></li>
 			<li><a href="AtlasCwiczen.jsp"><b>Atlas ćwiczeń</b></a></li>
 			<li><a href="kontakt.jsp"><b>Kontakt</b></a></li>
@@ -20,6 +22,7 @@
 	</nav>
 	<div class="container">
 		<h1>Licznik kalorii</h1>
+		<h4>Skorzystaj z dostępnej bazy produktów i oblicz ilość spożytych kalorii</h4>
 
 		<label>Wybierz produkt:</label>
 		<select id="product-list">
@@ -61,17 +64,12 @@
 		<label>Ilość (w gramach):</label>
 		<input type="number" id="quantity-input" min="1" value="100">
 
-		<button id="add-button">Dodaj</button>
+		<button id="add-button">Dodaj produkt</button>
 
-		<h2>Podsumowanie:</h2>
-		<ul>
-			<li>Kalorie: <span id="calories">0</span></li>
-			<li>Białko: <span id="protein">0</span> g</li>
-			<li>Tłuszcz: <span id="fat">0</span> g</li>
-			<li>Węglowodany: <span id="carbs">0</span> g</li>
-		</ul>
+		<h2>Wybrane produkty:</h2>
+		<ul id="selected-products-list"></ul>
 
-		<h2>Suma:</h2>
+		<h2>Łącznie:</h2>
 		<ul>
 			<li>Kalorie: <span id="calories-sum">0</span></li>
 			<li>Białko: <span id="protein-sum">0</span> g</li>
@@ -80,9 +78,9 @@
 		</ul>
 		<button id="reset-button">Wyzeruj</button>
 	</div>
-
+	<br>
 	<h1>Lista wszystkich dostępnych produktów</h1>
-
+	<h3>Na 100g produktu</h3>
 	<table>
 		<tr>
 			<th>Lp.</th>
@@ -136,77 +134,114 @@
 	</table>
 
 <script>
-    document.getElementById("add-button").addEventListener("click", function () {
-        var productList = document.getElementById("product-list");
-        var selectedOption = productList.options[productList.selectedIndex];
+	var selectedProducts = [];
 
-        if (!selectedOption.value) {
-            alert("Wybierz produkt.");
-            return;
-        }
+	function addProductToList() {
+		var productList = document.getElementById("product-list");
+		var selectedOption = productList.options[productList.selectedIndex];
 
-        var quantityInput = document.getElementById("quantity-input");
-        var grams = parseInt(quantityInput.value);
-        if (isNaN(grams) || grams <= 0) {
-            alert("Podaj prawidłową ilość (większą od zera).");
-            return;
-        }
+		if (!selectedOption.value) {
+			alert("Wybierz produkt.");
+			return;
+		}
 
-        var caloriesSpan = document.getElementById("calories");
-        var proteinSpan = document.getElementById("protein");
-        var fatSpan = document.getElementById("fat");
-        var carbsSpan = document.getElementById("carbs");
+		var quantityInput = document.getElementById("quantity-input");
+		var grams = parseInt(quantityInput.value);
+		if (isNaN(grams) || grams <= 0) {
+			alert("Podaj prawidłową ilość (większą od zera).");
+			return;
+		}
 
-        var caloriesSumSpan = document.getElementById("calories-sum");
-        var proteinSumSpan = document.getElementById("protein-sum");
-        var fatSumSpan = document.getElementById("fat-sum");
-        var carbsSumSpan = document.getElementById("carbs-sum");
+		var selectedProductsList = document.getElementById("selected-products-list");
 
-        var calories = parseInt(caloriesSpan.innerText);
-        var protein = parseInt(proteinSpan.innerText);
-        var fat = parseInt(fatSpan.innerText);
-        var carbs = parseInt(carbsSpan.innerText);
+		var product = {
+			name: selectedOption.value,
+			kalorie: parseInt(selectedOption.getAttribute("data-kalorie")),
+			bialko: parseInt(selectedOption.getAttribute("data-bialko")),
+			tluszcz: parseInt(selectedOption.getAttribute("data-tluszcz")),
+			weglowodany: parseInt(selectedOption.getAttribute("data-weglowodany")),
+			grams: grams
+		};
 
-        calories += grams / 100 * parseInt(selectedOption.getAttribute("data-kalorie"));
-        protein += grams / 100 * parseInt(selectedOption.getAttribute("data-bialko"));
-        fat += grams / 100 * parseInt(selectedOption.getAttribute("data-tluszcz"));
-        carbs += grams / 100 * parseInt(selectedOption.getAttribute("data-weglowodany"));
+		selectedProducts.push(product);
 
-        caloriesSumSpan.innerText = parseInt(caloriesSumSpan.innerText) + calories;
-        proteinSumSpan.innerText = parseInt(proteinSumSpan.innerText) + protein;
-        fatSumSpan.innerText = parseInt(fatSumSpan.innerText) + fat;
-        carbsSumSpan.innerText = parseInt(carbsSumSpan.innerText) + carbs;
+		var productContainer = document.createElement("div");
+		productContainer.className = "product-container";
 
-        caloriesSpan.innerText = calories;
-        proteinSpan.innerText = protein;
-        fatSpan.innerText = fat;
-        carbsSpan.innerText = carbs;
+		var productName = document.createElement("span");
+		productName.textContent = product.name + " (" + product.grams + " g) - ";
+		productContainer.appendChild(productName);
 
-        quantityInput.value = "";
-        productList.selectedIndex = 0;
-    });
+		var productDetails = document.createElement("span");
+		productDetails.textContent = "Kalorie: " + product.kalorie + ", Białko: " + product.bialko + ", Tłuszcz: " + product.tluszcz + ", Węglowodany: " + product.weglowodany;
+		productContainer.appendChild(productDetails);
 
-    document.getElementById("reset-button").addEventListener("click", function () {
-        var caloriesSpan = document.getElementById("calories");
-        var proteinSpan = document.getElementById("protein");
-        var fatSpan = document.getElementById("fat");
-        var carbsSpan = document.getElementById("carbs");
+		var deleteButton = document.createElement("button");
+		deleteButton.textContent = "X";
+		deleteButton.className = "delete-button";
+		deleteButton.addEventListener("click", function () {
+			removeProduct(product);
+		});
+		productContainer.appendChild(deleteButton);
 
-        var caloriesSumSpan = document.getElementById("calories-sum");
-        var proteinSumSpan = document.getElementById("protein-sum");
-        var fatSumSpan = document.getElementById("fat-sum");
-        var carbsSumSpan = document.getElementById("carbs-sum");
+		selectedProductsList.appendChild(productContainer);
 
-        caloriesSpan.innerText = "0";
-        proteinSpan.innerText = "0";
-        fatSpan.innerText = "0";
-        carbsSpan.innerText = "0";
+		calculateTotal();
 
-        caloriesSumSpan.innerText = "0";
-        proteinSumSpan.innerText = "0";
-        fatSumSpan.innerText = "0";
-        carbsSumSpan.innerText = "0";
-    });
+		quantityInput.value = "";
+		productList.selectedIndex = 0;
+	}
+
+	function removeProduct(product) {
+		var index = selectedProducts.indexOf(product);
+		if (index !== -1) {
+			selectedProducts.splice(index, 1);
+			var productContainers = document.getElementsByClassName("product-container");
+			var productContainer = productContainers[index];
+			productContainer.remove();
+			calculateTotal();
+		}
+	}
+
+	function calculateTotal() {
+		var caloriesSum = 0;
+		var proteinSum = 0;
+		var fatSum = 0;
+		var carbsSum = 0;
+
+		selectedProducts.forEach(function (product) {
+			caloriesSum += (product.grams / 100) * product.kalorie;
+			proteinSum += (product.grams / 100) * product.bialko;
+			fatSum += (product.grams / 100) * product.tluszcz;
+			carbsSum += (product.grams / 100) * product.weglowodany;
+		});
+
+		var caloriesSumSpan = document.getElementById("calories-sum");
+		var proteinSumSpan = document.getElementById("protein-sum");
+		var fatSumSpan = document.getElementById("fat-sum");
+		var carbsSumSpan = document.getElementById("carbs-sum");
+
+		caloriesSumSpan.innerText = caloriesSum.toFixed(2);
+		proteinSumSpan.innerText = proteinSum.toFixed(2);
+		fatSumSpan.innerText = fatSum.toFixed(2);
+		carbsSumSpan.innerText = carbsSum.toFixed(2);
+	}
+
+	document.getElementById("add-button").addEventListener("click", addProductToList);
+
+	document.getElementById("reset-button").addEventListener("click", function () {
+		selectedProducts = [];
+
+		var selectedProductsList = document.getElementById("selected-products-list");
+		while (selectedProductsList.firstChild) {
+			selectedProductsList.removeChild(selectedProductsList.firstChild);
+		}
+
+		calculateTotal();
+	});
+
 </script>
+
+
 </body>
 </html>

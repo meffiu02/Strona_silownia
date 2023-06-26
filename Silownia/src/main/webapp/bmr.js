@@ -19,6 +19,22 @@ function obliczBMR() {
     return;
   }
 
+  // Sprawdzenie czy wiek nie przekracza 180 lat
+  if (parseInt(wiek.value) > 180) {
+    alert("Maksymalny dopuszczalny wiek to 180 lat.");
+    wiek.value = "";
+    wiek.focus();
+    return;
+  }
+
+  // Sprawdzenie czy wzrost nie przekracza 300 cm
+  if (parseFloat(wzrost.value) > 300) {
+    alert("Maksymalny dopuszczalny wzrost to 300 cm.");
+    wzrost.value = "";
+    wzrost.focus();
+    return;
+  }
+
   // Pobranie wartości z pól formularza
   const plecValue = plec.value;
   const wagaValue = parseFloat(waga.value);

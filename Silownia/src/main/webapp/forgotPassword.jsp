@@ -4,6 +4,7 @@
 <head>
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
+ <link rel="shortcut icon" href="gym.ico" type="image/x-icon">
 <title>Snippet - BBBootstrap</title>
 <link
 	href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css'

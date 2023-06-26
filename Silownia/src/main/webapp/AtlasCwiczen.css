@@ -28,11 +28,11 @@ nav{
     text-align: center;
   }
   nav a:hover{
-    letter-spacing: 3px;
+    letter-spacing: 2px;
   }
   a{
     color: rgb(255, 252, 252);
-    font-size: 17px;
+    font-size: 16px;
     text-decoration: none;
     margin: 10px 0;
     transition: 0.2s ease-in-out;
@@ -44,6 +44,22 @@ nav{
   }
   a:hover{
     color: #ffffff;
+  }
+ .back{
+    display: flex;
+    background-color: rgb(26, 24, 24);
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+
+  }
+  .wstep{
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 2x 2px rgba(0, 0, 0, 0.8);
+  
   }
 
   .container{

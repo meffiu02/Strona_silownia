@@ -6,20 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="AtlasCwiczen.css">
+     <link rel="shortcut icon" href="gym.ico" type="image/x-icon">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Atlas ćwiczeń</title>
 </head>
 <body>
 
     <nav>
         <a href="main.jsp"><b>Strona główna</b></a>
-        <a href="wyborkalkulatora.jsp"><b>Kalkulatory</b></a>
+        <a href="wyborkalkulatora.jsp"><b>Kalkulator BMI i BMR</b></a>
+         <a href="tetno.jsp"><b>Kalkulator tętna</b></a>
         <a href="licznikkalorii.jsp"><b>Licznik kalorii</b></a>
         <a href="AtlasCwiczen.jsp"><b>Atlas Ćwiczeń</b></a>
         <a href="kontakt.jsp"><b>Kontakt</b></a>
         <a href="uzytkownik.jsp"><%=session.getAttribute("nazwa-log") %></a>
         <a href="logout"><b>Wyloguj</b></a>
     </nav>
-
+     <div class="back">
+        <div class="wstep">
+		    <h1>Na tej stronie możesz odnaleźć idealne ćwiczenia, aby osiagnąć Swoją <b>wymarzoną sylwetkę</b></h1><br>
+            
+		    <h2>Wybierz spośród 6 kategorii, aby dowiedzieć się więcej o danej partii ciała</h2>
+	    </div>
+    </div>
     <div class="container">
         <div class="atlas klatka" onclick="window.location.href = 'klatka.jsp';">
         <p class="category"><b>KLATKA PIERSIOWA</b></p>

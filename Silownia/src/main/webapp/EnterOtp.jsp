@@ -1,7 +1,7 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <html>
 <head>
-
+ <link rel="shortcut icon" href="gym.ico" type="image/x-icon">
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
