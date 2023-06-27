@@ -16,6 +16,12 @@ if(session.getAttribute("nazwa-log")==null)
     <link rel="stylesheet" type="text/css" href="bmr.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
      <link rel="shortcut icon" href="gym.ico" type="image/x-icon">
+      <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
 </head>
 
 <body>
@@ -52,7 +58,7 @@ if(session.getAttribute("nazwa-log")==null)
                     <option value="1.725">Wysoka aktywność (6-7 treningów w tygodniu)</option>
                     <option value="1.9">Bardzo wysoka aktywność (codzienne treningi)</option>
                 </select><br>
-                <button type="submit">Oblicz BMR</button>
+                <button type="submit" class="animate__animated animate__bounce">Oblicz BMR</button>
             </form>
         </section>
     
@@ -74,6 +80,7 @@ if(session.getAttribute("nazwa-log")==null)
     </div>
     </footer>
     <script src="bmr.js"></script>
+    
 </body>
 
 </html>

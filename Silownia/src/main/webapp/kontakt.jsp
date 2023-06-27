@@ -14,6 +14,10 @@
       <link rel="stylesheet" href="kontakt.css">
        <link rel="shortcut icon" href="gym.ico" type="image/x-icon">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
      <title>Kontakt</title>
  </head>
  <body>
@@ -55,7 +59,7 @@
              <label><input type="hidden" name="czas" value="x-sheetmonkey-current-date-time" /></label>
          </div>
          <div class="przycisk">
-             <button> Wyślij </button>
+             <button class="animate__animated animate__bounce"> Wyślij </button>
          </div>
      
      <input 

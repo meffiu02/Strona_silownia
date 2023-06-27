@@ -16,6 +16,10 @@ if(session.getAttribute("nazwa-log")==null)
     <link rel="stylesheet" type="text/css" href="bmi.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
      <link rel="shortcut icon" href="gym.ico" type="image/x-icon">
+      <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 </head>
 
 <body>
@@ -39,7 +43,7 @@ if(session.getAttribute("nazwa-log")==null)
             <form>
                 <label>Waga (kg): </label><input type="number" name="waga"><br>
                 <label>Wzrost (cm): </label><input type="number" name="wzrost"><br>
-                <button type="submit">Oblicz BMI</button>
+                <button type="submit" class="animate__animated animate__bounce">Oblicz BMI</button>
             </form>
         </section>
     </main>

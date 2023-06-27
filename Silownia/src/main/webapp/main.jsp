@@ -14,13 +14,39 @@ if(session.getAttribute("nazwa-log")==null)
     <link rel="stylesheet" href="main.css">
     <link rel="shortcut icon" href="gym.ico" type="image/x-icon">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.css">
     <title>Strona główna</title>
+    <style>
+    .sweet-alert-title {
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
 
+<script>
+  // Sprawdź, czy komunikat został już wyświetlony
+  if (document.cookie.indexOf('alertShown') === -1) {
+    Swal.fire({
+      html: 'Chcielibyśmy przypomnieć Wam o znaczeniu zdrowia i bezpieczeństwa podczas treningów. Jeżeli masz jakiekolwiek problemy zdrowotne lub cierpisz na jakąś chorobę, gorąco zalecamy skonsultowanie się z lekarzem przed rozpoczęciem korzystania z naszej strony i planów treningowych.<br><br>Twój dobry stan zdrowia jest dla nas najważniejszy!!!',
+      icon: 'info',
+      confirmButtonText: 'ROZUMIEM',
+      width: '600px',
+      customClass: {
+      
+        htmlContainer: 'sweet-alert-html',
+        confirmButton: 'sweet-alert-button'
+      }
+    });
+
+    // Ustaw cookie, że komunikat został wyświetlony
+    document.cookie = 'alertShown=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/';
+  }
+</script>
         <nav>
-            <a href="#"><b>Strona główna</b></a>
+            <a href="main.jsp"><b>Strona główna</b></a>
             <a href="wyborkalkulatora.jsp"><b>Kalkulator BMI i BMR</b></a>
             <a href="tetno.jsp"><b>Kalkulator tętna</b></a>
             <a href="licznikkalorii.jsp"><b>Licznik kalorii</b></a>
@@ -37,7 +63,7 @@ if(session.getAttribute("nazwa-log")==null)
             <div class="opis">
                 <p>Nasza strona to źródło wartościowych informacji dotyczących zdrowego stylu życia i perfekcyjnego treningu</p>
                 <p>Dzięki naszej wiedzy będziesz wstanie osiągnąć swoją <b class="wymarzona-sylwetka">wymarzoną sylwetkę</b></p>
-                <p>Zapraszamy do regularnego odwiedzania naszej strony, aby pozostać na bieżąco z najnowszymi trendami i technikami treningowymi!</p>
+                <p>Zapraszamy do regularnego odwiedzania naszej strony, aby pozostać na bieżąco z najnowszymi trendami<br> i technikami treningowymi!</p>
             </div>
            
         </div>
@@ -48,6 +74,7 @@ if(session.getAttribute("nazwa-log")==null)
                     <span><i class="fa-solid fa-phone"></i>Tel. komórkowy: 123-456-789</span>
             </div>
         </footer>
-        
+       
+		
 </body>
 </html>

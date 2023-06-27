@@ -6,6 +6,10 @@
 	<title>Licznik kalorii</title>
 	<link rel="shortcut icon" href="gym.ico" type="image/x-icon">
 	<link rel="stylesheet" href="licznikkalorii.css">
+	<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 </head>
 <body>
 	<nav> 
@@ -24,7 +28,7 @@
 		<h1>Licznik kalorii</h1>
 		<h4>Skorzystaj z dostępnej bazy produktów i oblicz ilość spożytych kalorii</h4>
 
-		<label>Wybierz produkt:</label>
+		<label class="animate__animated animate__shakeX">Wybierz produkt:</label>
 		<select id="product-list">
 			<option value="" disabled selected>Wybierz produkt</option>
 			<% 
@@ -173,7 +177,7 @@
 		productContainer.appendChild(productName);
 
 		var productDetails = document.createElement("span");
-		productDetails.textContent = "Kalorie: " + product.kalorie + ", Białko: " + product.bialko + ", Tłuszcz: " + product.tluszcz + ", Węglowodany: " + product.weglowodany;
+		productDetails.textContent = "Kalorie: " + product.kalorie + ", Białko: " + product.bialko + ", Tłuszcz: " + product.tluszcz + ", Węglowodany: " + product.weglowodany+ "  ";
 		productContainer.appendChild(productDetails);
 
 		var deleteButton = document.createElement("button");

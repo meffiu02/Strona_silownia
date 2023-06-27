@@ -26,7 +26,7 @@
 
 			<h2>Nazwa: <span class="kolor-nazwa"><%= session.getAttribute("nazwa-log") %></span></h2>
 			<h2>Email: <span class="kolor-email"><%= session.getAttribute("email-log") %></span></h2>
-			<h2>Hasło: <button onclick="location.href='forgotPassword.jsp'">Zmień hasło</button></h2>
+			<h2>Hasło: <button onclick="location.href='forgotPassword2.jsp'">Zmień hasło</button></h2>
        
 
     </div>

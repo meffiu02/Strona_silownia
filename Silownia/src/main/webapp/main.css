@@ -73,6 +73,7 @@ h1 {
 	border-right: 3px solid;
 	white-space: nowrap;
 	animation: typing 2.5s steps(21), blink-cursor 0.5s infinite step-end alternate, fade-border 0.5s 2.5s forwards;
+	text-align: center;
 }
 
 h2 {
@@ -87,6 +88,7 @@ h2 {
 	border-right: 3px solid;
 	white-space: nowrap;
 	animation: typing 2.5s steps(21), blink-cursor 0.5s infinite step-end alternate, fade-border 0.5s 2.5s forwards;
+	text-align: center;
 }
 
 @keyframes typing {

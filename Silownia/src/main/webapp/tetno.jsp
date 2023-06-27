@@ -4,6 +4,10 @@
     <link rel="stylesheet" href="tetno.css">
      <link rel="shortcut icon" href="gym.ico" type="image/x-icon">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 <head>
     <title>Kalkulator tętna treningowego</title>
 </head>
@@ -39,8 +43,8 @@
             <option value="3">Wysoki (ćwiczenia 4-5 razy w tygodniu)</option>
             <option value="4">Bardzo wysoki (intensywny trening codziennie)</option>
         </select>
-        <div class="przycisk">
-        <button onclick="calculateHeartRate()">Oblicz</button>
+        <div class="przycisk animate__animated animate__bounce">
+        <button onclick="calculateHeartRate()">Oblicz tętno</button>
         </div>
         <div class="result-container">
             <p class="wynik">Wynik:</p><br>
