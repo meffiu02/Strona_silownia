@@ -63,7 +63,7 @@ select, input{
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
-button{
+.przycisk{
     background-color: #333;
     color: #fff;
     padding: 10px 50px;
@@ -77,19 +77,19 @@ button{
     margin-top: 10px;
   
   }
-  button:hover{
+.przycisk:hover{
     letter-spacing: 4px;
   }
-  button:active{
+  .przycisk:active{
     transform: scale(0.95);
   }
-  button:focus{
+  .przycisk:focus{
     outline: none;
   }
-  button[type="submit"]:hover {
+  .przycisk[type="submit"]:hover {
     background-color: #555;
   }
-  button {
+  .przycisk {
     cursor: pointer;
   }
 label {

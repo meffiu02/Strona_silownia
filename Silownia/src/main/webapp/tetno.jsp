@@ -8,6 +8,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <head>
     <title>Kalkulator tętna treningowego</title>
 </head>
@@ -22,7 +23,7 @@
             <li><a href="AtlasCwiczen.jsp"><b>Atlas ćwiczeń</b></a></li>
             <li><a href="kontakt.jsp"><b>Kontakt</b></a></li>
            <li><a href="uzytkownik.jsp"><%=session.getAttribute("nazwa-log") %></a></li>
-            <li><a href="logout"><b>Wyloguj</b></a></li>
+            <li><a href="#" onclick="confirmLogout()"><b>Wyloguj</b></a></li>
 
         </ul>
     </nav>
@@ -60,88 +61,119 @@
 
     <footer>
         <div class="footer">
-            <span>&copy 2023 Siłownia</span>
-            <span><i class="fa-regular fa-envelope"></i>Adres e-mail: gym@wp.pl</span>
-            <span><i class="fa-solid fa-phone"></i>Tel. komórkowy: 123-456-789</span>
+            <span class="stopka">&copy 2023 Siłownia</span>
+            <span class="stopka"><i class="fa-regular fa-envelope"></i>Adres e-mail: gym@wp.pl</span>
+            <span class="stopka"><i class="fa-solid fa-phone"></i>Tel. komórkowy: 123-456-789</span>
     </div>
     </footer>
-    <script>
-    var ageConfirmed = false;
+<script>
+  var ageConfirmed = false;
 
-    function calculateHeartRate() {
-        var ageInput = document.getElementById("age");
-        var genderInput = document.getElementById("gender");
-        var activityInput = document.getElementById("activity");
+  function calculateHeartRate() {
+    var ageInput = document.getElementById("age");
+    var genderInput = document.getElementById("gender");
+    var activityInput = document.getElementById("activity");
 
-        var age = parseInt(ageInput.value);
-        var gender = genderInput.value;
-        var activity = parseInt(activityInput.value);
+    var age = parseInt(ageInput.value);
+    var gender = genderInput.value;
+    var activity = parseInt(activityInput.value);
 
-        if (isNaN(age) || age <= 0) {
-            alert("Wprowadź poprawny wiek.");
-            ageInput.value = "";
-            ageInput.focus();
-            return;
+    if (isNaN(age) || age <= 0) {
+      Swal.fire("Błąd", "Wprowadź poprawny wiek.", "error");
+      ageInput.value = "";
+      ageInput.focus();
+      return;
+    }
+
+    if (age > 180) {
+      Swal.fire("Błąd", "Maksymalny dopuszczalny wiek to 180 lat.", "error");
+      ageInput.value = "";
+      ageInput.focus();
+      return;
+    }
+
+    if (age > 120 && !ageConfirmed) {
+      Swal.fire({
+        title: "Potwierdzenie",
+        text: "Czy na pewno masz tyle lat?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Tak",
+        cancelButtonText: "Nie",
+      }).then(function (confirmResponse) {
+        if (!confirmResponse.isConfirmed) {
+          ageInput.value = "";
+          ageInput.focus();
+          return;
+        } else {
+          ageConfirmed = true;
+          calculateHeartRate(); // Wywołanie ponowne funkcji po potwierdzeniu wieku
         }
+      });
+      return;
+    }
 
-        if (age > 180) {
-            alert("Maksymalny dopuszczalny wiek to 180 lat.");
-            ageInput.value = "";
-            ageInput.focus();
-            return;
-        }
+    if (gender === "") {
+      Swal.fire("Błąd", "Wybierz płeć.", "error");
+      genderInput.focus();
+      return;
+    }
 
-        if (age > 120 && !ageConfirmed) {
-            var confirmResponse = confirm("Czy na pewno masz tyle lat?");
-            if (!confirmResponse) {
-                ageInput.value = "";
-                ageInput.focus();
-                return;
-            } else {
-                ageConfirmed = true;
+    if (isNaN(activity) || activity <= 0) {
+      Swal.fire("Błąd", "Wybierz poziom aktywności.", "error");
+      activityInput.focus();
+      return;
+    }
+
+    var maxHeartRate = 220 - age;
+    var lowerZone, upperZone;
+
+    if (activity === 1) {
+      lowerZone = 0.5;
+      upperZone = 0.6;
+    } else if (activity === 2) {
+      lowerZone = 0.6;
+      upperZone = 0.7;
+    } else if (activity === 3) {
+      lowerZone = 0.7;
+      upperZone = 0.8;
+    } else {
+      lowerZone = 0.8;
+      upperZone = 0.9;
+    }
+
+    var lowerHeartRate, upperHeartRate;
+
+    if (gender === "male") {
+      lowerHeartRate = Math.round(lowerZone * maxHeartRate);
+      upperHeartRate = Math.round(upperZone * maxHeartRate);
+    } else {
+      lowerHeartRate = Math.round(lowerZone * maxHeartRate) - 5;
+      upperHeartRate = Math.round(upperZone * maxHeartRate) - 5;
+    }
+
+    document.getElementById("result").innerHTML =
+      "Zakres tętna treningowego: " +
+      lowerHeartRate +
+      " - " +
+      upperHeartRate +
+      " uderzeń na minutę.";
+  }
+</script>
+           <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    function confirmLogout() {
+        swal({
+            title: "Czy na pewno chcesz się wylogować?",
+            icon: "warning",
+            buttons: ["Anuluj", "Wyloguj się"],
+            dangerMode: true,
+        }).then((willLogout) => {
+            if (willLogout) {
+                window.location.href = "logout";
             }
-        }
-
-        if (gender === "") {
-            alert("Wybierz płeć.");
-            genderInput.focus();
-            return;
-        }
-
-        if (isNaN(activity) || activity <= 0) {
-            alert("Wybierz poziom aktywności.");
-            activityInput.focus();
-            return;
-        }
-
-        var maxHeartRate = 220 - age;
-        var lowerZone, upperZone;
-
-        if (activity === 1) {
-            lowerZone = 0.5;
-            upperZone = 0.6;
-        } else if (activity === 2) {
-            lowerZone = 0.6;
-            upperZone = 0.7;
-        } else if (activity === 3) {
-            lowerZone = 0.7;
-            upperZone = 0.8;
-        } else {
-            lowerZone = 0.8;
-            upperZone = 0.9;
-        }
-
-        var lowerHeartRate, upperHeartRate;
-
-        if (gender === "male") {
-            lowerHeartRate = Math.round(lowerZone * maxHeartRate);
-            upperHeartRate = Math.round(upperZone * maxHeartRate);
-        } else {
-            lowerHeartRate = Math.round(lowerZone * maxHeartRate) - 5;
-            upperHeartRate = Math.round(upperZone * maxHeartRate) - 5;
-        }
-
-        document.getElementById("result").innerHTML = "Zakres tętna treningowego: " + lowerHeartRate + " - " + upperHeartRate + " uderzeń na minutę.";
+        });
     }
 </script>
     

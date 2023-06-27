@@ -21,7 +21,7 @@
 			<li><a href="AtlasCwiczen.jsp"><b>Atlas ćwiczeń</b></a></li>
 			<li><a href="kontakt.jsp"><b>Kontakt</b></a></li>
 			<li><a href="uzytkownik.jsp"><%=session.getAttribute("nazwa-log") %></a></li>
-			<li><a href="logout"><b>Wyloguj</b></a></li>
+			<li><a href="#" onclick="confirmLogout()"><b>Wyloguj</b></a></li>
 		</ul>
 	</nav>
 	<div class="container">
@@ -68,7 +68,7 @@
 		<label>Ilość (w gramach):</label>
 		<input type="number" id="quantity-input" min="1" value="100">
 
-		<button id="add-button">Dodaj produkt</button>
+		<button class="przycisk" id="add-button">Dodaj produkt</button>
 
 		<h2>Wybrane produkty:</h2>
 		<ul id="selected-products-list"></ul>
@@ -80,7 +80,7 @@
 			<li>Tłuszcz: <span id="fat-sum">0</span> g</li>
 			<li>Węglowodany: <span id="carbs-sum">0</span> g</li>
 		</ul>
-		<button id="reset-button">Wyzeruj</button>
+		<button class="przycisk" id="reset-button">Wyzeruj</button>
 	</div>
 	<br>
 	<h1>Lista wszystkich dostępnych produktów</h1>
@@ -183,8 +183,10 @@
 		var deleteButton = document.createElement("button");
 		deleteButton.textContent = "X";
 		deleteButton.className = "delete-button";
+		deleteButton.style.backgroundColor = "red"; // Ustawia tło przycisku na czerwone
+		deleteButton.style.cursor = "pointer"; // Dodaje styl "cursor: pointer;"
 		deleteButton.addEventListener("click", function () {
-			removeProduct(product);
+		    removeProduct(product);
 		});
 		productContainer.appendChild(deleteButton);
 
@@ -245,7 +247,22 @@
 	});
 
 </script>
+           <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+<script>
+    function confirmLogout() {
+        swal({
+            title: "Czy na pewno chcesz się wylogować?",
+            icon: "warning",
+            buttons: ["Anuluj", "Wyloguj się"],
+            dangerMode: true,
+        }).then((willLogout) => {
+            if (willLogout) {
+                window.location.href = "logout";
+            }
+        });
+    }
+</script>
 
 </body>
 </html>

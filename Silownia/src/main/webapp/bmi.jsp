@@ -20,6 +20,7 @@ if(session.getAttribute("nazwa-log")==null)
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -33,7 +34,7 @@ if(session.getAttribute("nazwa-log")==null)
                 <li><a href="AtlasCwiczen.jsp"><b>Atlas ćwiczeń</b></a></li>
                 <li><a href="kontakt.jsp"><b>Kontakt</b></a></li>
                 <li><a href="uzytkownik.jsp"><%=session.getAttribute("nazwa-log") %></a></li>
-            	<li><a href="logout"><b>Wyloguj</b></a></li>
+            	<li> <a href="#" onclick="confirmLogout()"><b>Wyloguj</b></a></li>
             </ul>
         </nav>
     </header>
@@ -69,12 +70,28 @@ if(session.getAttribute("nazwa-log")==null)
     <footer>
         
         <div class="footer">
-            <span>&copy 2023 Siłownia</span>
-            <span><i class="fa-regular fa-envelope"></i>Adres e-mail: gym@wp.pl</span>
-            <span><i class="fa-solid fa-phone"></i>Tel. komórkowy: 123-456-789</span>
+            <span class="stopka">&copy 2023 Siłownia</span>
+            <span class="stopka"><i class="fa-regular fa-envelope"></i>Adres e-mail: gym@wp.pl</span>
+            <span class="stopka"><i class="fa-solid fa-phone"></i>Tel. komórkowy: 123-456-789</span>
     </div>
     </footer>
     <script src="bmi.js"></script>
+                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    function confirmLogout() {
+        swal({
+            title: "Czy na pewno chcesz się wylogować?",
+            icon: "warning",
+            buttons: ["Anuluj", "Wyloguj się"],
+            dangerMode: true,
+        }).then((willLogout) => {
+            if (willLogout) {
+                window.location.href = "logout";
+            }
+        });
+    }
+</script>
 </body>
 
 </html>

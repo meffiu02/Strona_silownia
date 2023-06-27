@@ -12,21 +12,27 @@ function calculateBmi(weight, height) {
 
   // Sprawdzenie, czy pola formularza są puste
   if (weightInput.value === '' || heightInput.value === '') {
-    alert('Proszę uzupełnić wszystkie pola formularza. ');
+    Swal.fire('Błąd', 'Proszę uzupełnić wszystkie pola formularza.', 'error');
     return;
   }
-  
+
   // Sprawdzenie, czy waga i wzrost są dodatnie
   if (weight <= 0 || height <= 0) {
-    alert("Wartości waga i wzrost muszą być dodatnie.");
+    Swal.fire('Błąd', 'Wartości wagi i wzrostu muszą być dodatnie.', 'error');
     return;
   }
-  
+
   // Sprawdzenie, czy wzrost nie przekracza 300 cm
   if (height > 300) {
-    alert("Maksymalny dopuszczalny wzrost to 300 cm.");
-    heightInput.value = "";
-    heightInput.focus();
+    Swal.fire({
+      title: 'Błąd',
+      text: 'Maksymalny dopuszczalny wzrost to 300 cm.',
+      icon: 'error',
+      onClose: () => {
+        heightInput.value = '';
+        heightInput.focus();
+      }
+    });
     return;
   }
 
@@ -48,6 +54,10 @@ formBmi.addEventListener('submit', function(event) {
   event.preventDefault();
   const weight = weightInput.value;
   const height = heightInput.value;
-  const [bmi, bmiType] = calculateBmi(weight, height);
-  resultBmi.textContent = `${bmi} oznacza to ${bmiType}`;
+  const bmiData = calculateBmi(weight, height);
+
+  if (bmiData) {
+    const [bmi, bmiType] = bmiData;
+    resultBmi.textContent = `${bmi} oznacza to ${bmiType}`;
+  }
 });

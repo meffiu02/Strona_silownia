@@ -20,7 +20,7 @@
         <a href="AtlasCwiczen.jsp"><b>Atlas Ćwiczeń</b></a>
         <a href="kontakt.jsp"><b>Kontakt</b></a>
         <a href="uzytkownik.jsp"><%=session.getAttribute("nazwa-log") %></a>
-        <a href="logout"><b>Wyloguj</b></a>
+        <a href="#" onclick="confirmLogout()"><b>Wyloguj</b></a>
     </nav>
 
     <div class="opis">
@@ -84,5 +84,21 @@
                 <span><i class="fa-solid fa-phone"></i>Tel. komórkowy: 123-456-789</span>
         </div>
     </footer>
+                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    function confirmLogout() {
+        swal({
+            title: "Czy na pewno chcesz się wylogować?",
+            icon: "warning",
+            buttons: ["Anuluj", "Wyloguj się"],
+            dangerMode: true,
+        }).then((willLogout) => {
+            if (willLogout) {
+                window.location.href = "logout";
+            }
+        });
+    }
+</script>
 </body>
 </html>
