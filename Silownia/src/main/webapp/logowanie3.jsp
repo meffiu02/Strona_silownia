@@ -77,7 +77,7 @@
 		var status_success_rej = document.getElementById("status_rej").value;
 		if(status_success_rej == "success_rej")
 		{
-			swal("Tak jest!!!","Udało się zarejestrować.","success");
+			swal("Utworzono konto","Udało się zarejestrować","success");
 			document.getElementById("status_rej").value="";	
 			
 		}

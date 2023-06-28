@@ -17,14 +17,14 @@
         <a href="wyborkalkulatora.jsp"><b>Kalkulator BMI i BMR</b></a>
          <a href="tetno.jsp"><b>Kalkulator tętna</b></a>
         <a href="licznikkalorii.jsp"><b>Licznik kalorii</b></a>
-        <a href="AtlasCwiczen.jsp"><b>Atlas Ćwiczeń</b></a>
+        <a href="AtlasCwiczen.jsp"><b>Atlas ćwiczeń</b></a>
         <a href="kontakt.jsp"><b>Kontakt</b></a>
         <a href="uzytkownik.jsp"><%=session.getAttribute("nazwa-log") %></a>
         <a href="#" onclick="confirmLogout()"><b>Wyloguj</b></a>
     </nav>
      <div class="back">
         <div class="wstep">
-		    <h1>Na tej stronie możesz odnaleźć idealne ćwiczenia, aby osiagnąć Swoją <b>wymarzoną sylwetkę</b></h1><br>
+		    <h2>Na tej stronie możesz odnaleźć idealne ćwiczenia, aby osiagnąć swoją <b>wymarzoną sylwetkę</b></h2><br>
             
 		    <h2>Wybierz spośród 6 kategorii, aby dowiedzieć się więcej o danej partii ciała</h2>
 	    </div>

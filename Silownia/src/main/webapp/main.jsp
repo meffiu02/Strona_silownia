@@ -30,9 +30,9 @@ if(session.getAttribute("nazwa-log")==null)
   // Sprawdź, czy komunikat został już wyświetlony
   if (document.cookie.indexOf('alertShown') === -1) {
     Swal.fire({
-      html: 'Chcielibyśmy przypomnieć Wam o znaczeniu zdrowia i bezpieczeństwa podczas treningów. Jeżeli masz jakiekolwiek problemy zdrowotne lub cierpisz na jakąś chorobę, gorąco zalecamy skonsultowanie się z lekarzem przed rozpoczęciem korzystania z naszej strony i planów treningowych.<br><br>Twój dobry stan zdrowia jest dla nas najważniejszy!!!',
+      html: 'Chcielibyśmy przypomnieć Wam o znaczeniu zdrowia i bezpieczeństwa podczas treningów. Jeżeli masz jakiekolwiek problemy zdrowotne lub cierpisz na jakąś chorobę, zalecamy skonsultowanie się z lekarzem przed rozpoczęciem korzystania z naszej strony i planów treningowych.<br><br>Twój stan zdrowia jest dla nas najważniejszy!!!',
       icon: 'info',
-      confirmButtonText: 'ROZUMIEM',
+      confirmButtonText: 'Rozumiem',
       width: '600px',
       customClass: {
       
@@ -50,7 +50,7 @@ if(session.getAttribute("nazwa-log")==null)
             <a href="wyborkalkulatora.jsp"><b>Kalkulator BMI i BMR</b></a>
             <a href="tetno.jsp"><b>Kalkulator tętna</b></a>
             <a href="licznikkalorii.jsp"><b>Licznik kalorii</b></a>
-            <a href="AtlasCwiczen.jsp"><b>Atlas Ćwiczeń</b></a>
+            <a href="AtlasCwiczen.jsp"><b>Atlas ćwiczeń</b></a>
             <a href="kontakt.jsp"><b>Kontakt</b></a>
             <a href="uzytkownik.jsp"><%=session.getAttribute("nazwa-log") %></a>
            <a href="#" onclick="confirmLogout()"><b>Wyloguj</b></a>

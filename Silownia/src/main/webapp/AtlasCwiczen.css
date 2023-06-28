@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins");
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@700&display=swap');
-
+*{
+	font-family: 'Poppins', cursive;
+}
 body{
     background-image: url("https://img.freepik.com/free-vector/gradient-pastel-color-background_23-2149360873.jpg?w=740&t=st=1681398945~exp=1681399545~hmac=4f0bf02443adba1d0e4087b422f541f90cfb16b2cbab1a0e14e5482bd590255f");
   background-repeat: no-repeat;
@@ -47,17 +49,18 @@ nav{
   }
  .back{
     display: flex;
-    background-color: rgb(26, 24, 24);
+    background-color: white;
     margin-top: 20px;
     margin-left: 100px;
     margin-right: 100px;
+    border-radius:10px;
+    text-align:center;
 
   }
   .wstep{
   padding-left: 20px;
   padding-right: 20px;
-  text-align: center;
-  color: white;
+  color: black;
   text-shadow: 1px 2x 2px rgba(0, 0, 0, 0.8);
   
   }

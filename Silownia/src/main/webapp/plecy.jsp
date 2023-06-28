@@ -17,14 +17,14 @@
         <a href="wyborkalkulatora.jsp"><b>Kalkulator BMI i BMR</b></a>
         <a href="tetno.jsp"><b>Kalkulator tętna</b></a>
         <a href="licznikkalorii.jsp"><b>Licznik kalorii</b></a>
-        <a href="AtlasCwiczen.jsp"><b>Atlas Ćwiczeń</b></a>
+        <a href="AtlasCwiczen.jsp"><b>Atlas ćwiczeń</b></a>
         <a href="kontakt.jsp"><b>Kontakt</b></a>
         <a href="uzytkownik.jsp"><%=session.getAttribute("nazwa-log") %></a>
        <a href="#" onclick="confirmLogout()"><b>Wyloguj</b></a>
     </nav>
 
     <div class="opis">
-        <h2>Mięśnie pleców</h2>
+        <h3>Mięśnie pleców</h3>
         <p>Mięśnie pleców są niezwykle ważne dla utrzymania dobrej postawy ciała i zapewnienia stabilności górnej części ciała. Wzmacnianie mięśni pleców przyczynia się do poprawy wydolności, siły oraz zapobiegania bólom i urazom pleców.</p>
 
         <h3>Mięśnie grzbietu</h3>

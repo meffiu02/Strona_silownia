@@ -22,7 +22,7 @@
     </nav>
 
     <div class="container">
-        <h1>Informacje o Twoim koncie</h1>
+        <h1>Informacje o koncie</h1>
 
 			<h2>Nazwa: <span class="kolor-nazwa"><%= session.getAttribute("nazwa-log") %></span></h2>
 			<h2>Email: <span class="kolor-email"><%= session.getAttribute("email-log") %></span></h2>

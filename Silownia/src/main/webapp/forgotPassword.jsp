@@ -34,7 +34,7 @@ h3{
     text-align: center;
 }
 .forgot {
-	background-color: aqua;
+	background-color: white;
 	padding: 12px;
 	border: 1px solid #dfdfdf;
     border-radius: 10px;

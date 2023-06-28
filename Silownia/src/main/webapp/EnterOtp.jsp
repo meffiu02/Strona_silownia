@@ -26,7 +26,7 @@
   background-image: url("https://img.freepik.com/free-vector/gradient-pastel-color-background_23-2149360873.jpg?w=740&t=st=1681398945~exp=1681399545~hmac=4f0bf02443adba1d0e4087b422f541f90cfb16b2cbab1a0e14e5482bd590255f");
 }
 .panel{
-    background-color: aquamarine;
+    background-color: white;
     border-radius: 10px;
 }
 .form-gap {

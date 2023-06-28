@@ -92,6 +92,37 @@ select, input{
   .przycisk {
     cursor: pointer;
   }
+  
+  .przycisk2{
+    background-color: #333;
+    color: #fff;
+    padding: 8px 30px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    transition: 0.3s ease-in-out;
+    letter-spacing: 3px;
+    font-size: 10px;
+    font-family: 'Poppins', cursive;
+    margin-top: 10px;
+  
+  }
+.przycisk2:hover{
+    letter-spacing: 4px;
+  }
+  .przycisk2:active{
+    transform: scale(0.95);
+  }
+  .przycisk2:focus{
+    outline: none;
+  }
+  .przycisk2[type="submit"]:hover {
+    background-color: #555;
+  }
+  .przycisk2 {
+    cursor: pointer;
+  }
+ 
 label {
     display: block;
     margin-bottom: 5px;

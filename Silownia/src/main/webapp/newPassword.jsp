@@ -49,9 +49,12 @@
   border-radius: 20px;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   transition: 0.3s ease-in-out;
-  letter-spacing: 3px;
   font-size: 20px;
   font-family: 'Poppins', cursive;
+   padding: 10px 10px;
+}
+.btn:hover{
+  letter-spacing: 4px;
 }
 </style>
 </head>

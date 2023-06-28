@@ -57,7 +57,7 @@ a:hover{
   margin-top: 20px;
   margin-left:250px;
   margin-right: 250px;
- background-color:rgb(204,153,255);
+ background-color:white;
   border-radius: 20px;
   font-family: 'Poppins', cursive;
   font-size: 21px;
@@ -65,13 +65,16 @@ a:hover{
 form{
   padding-top: 10px;
 }
+h3,h4,h6{
+	text-align:center;
+}
 .items input:not(.opis) {
   width: 100%;
   padding: 10px;
   margin-bottom: 2px;
   border: none;
   border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  box-shadow: 0 0 5px rgba(0,0,0,0.8);
 }
 textarea {
   width: 100%;

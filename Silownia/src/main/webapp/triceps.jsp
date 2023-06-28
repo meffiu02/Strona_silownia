@@ -17,7 +17,7 @@
         <a href="wyborkalkulatora.jsp"><b>Kalkulator BMI i BMR</b></a>
         <a href="tetno.jsp"><b>Kalkulator tętna</b></a>
         <a href="licznikkalorii.jsp"><b>Licznik kalorii</b></a>
-        <a href="AtlasCwiczen.jsp"><b>Atlas Ćwiczeń</b></a>
+        <a href="AtlasCwiczen.jsp"><b>Atlas ćwiczeń</b></a>
         <a href="kontakt.jsp"><b>Kontakt</b></a>
         <a href="uzytkownik.jsp"><%=session.getAttribute("nazwa-log") %></a>
         <a href="#" onclick="confirmLogout()"><b>Wyloguj</b></a>

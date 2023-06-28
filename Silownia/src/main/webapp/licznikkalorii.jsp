@@ -10,6 +10,8 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.css">
 </head>
 <body>
 	<nav> 
@@ -145,16 +147,25 @@
 		var selectedOption = productList.options[productList.selectedIndex];
 
 		if (!selectedOption.value) {
-			alert("Wybierz produkt.");
-			return;
-		}
+			  Swal.fire({
+			    icon: 'error',
+			    title: 'Błąd',
+			    text: 'Wybierz produkt.'
+			  });
+			  return;
+			}
 
-		var quantityInput = document.getElementById("quantity-input");
-		var grams = parseInt(quantityInput.value);
-		if (isNaN(grams) || grams <= 0) {
-			alert("Podaj prawidłową ilość (większą od zera).");
-			return;
-		}
+			var quantityInput = document.getElementById("quantity-input");
+			var grams = parseInt(quantityInput.value);
+			if (isNaN(grams) || grams <= 0) {
+			  Swal.fire({
+			    icon: 'error',
+			    title: 'Błąd',
+			    text: 'Podaj prawidłową ilość (większą od zera).'
+			  });
+			  return;
+			}
+
 
 		var selectedProductsList = document.getElementById("selected-products-list");
 
@@ -181,12 +192,11 @@
 		productContainer.appendChild(productDetails);
 
 		var deleteButton = document.createElement("button");
-		deleteButton.textContent = "X";
+		deleteButton.textContent = "Usuń produkt";
 		deleteButton.className = "delete-button";
-		deleteButton.style.backgroundColor = "red"; // Ustawia tło przycisku na czerwone
-		deleteButton.style.cursor = "pointer"; // Dodaje styl "cursor: pointer;"
+		deleteButton.className = "przycisk2 delete-button";
 		deleteButton.addEventListener("click", function () {
-		    removeProduct(product);
+			removeProduct(product);
 		});
 		productContainer.appendChild(deleteButton);
 

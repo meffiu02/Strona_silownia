@@ -43,6 +43,9 @@
      <h3>W tym miejscu możesz się z nami skontaktować</h3>
      <h4>Odpowiedź otrzymasz na zarejestrowanego maila</h4>
      <h6>Uzupełnij poniższy formularz, a my postaramy się odpowiedzieć jak naszybciej</h6>
+    <span class="stopka" ><i class="fa-regular fa-envelope" style="text-align:center;"></i >Adres e-mail: gym@wp.pl</span>
+<span class="stopka" ><i class="fa-solid fa-phone" style="text-align:center;"></i>Tel. komórkowy: 123-456-789</span>
+    
      <div class="items">
          <input type="hidden" name="e-mail" value=" <%= session.getAttribute("email-log") %>">
          <input type="hidden"  value="x-sheetmonkey-current-date-time" />

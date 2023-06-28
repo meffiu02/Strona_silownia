@@ -51,12 +51,9 @@ function obliczBMR() {
   }
   bmr *= aktywnoscValue;
 
-  // Wyświetlenie wyniku na stronie za pomocą SweetAlert2
-  Swal.fire({
-    icon: 'success',
-    title: 'Wynik',
-    html: `<strong>Twoje BMR wynosi: ${bmr.toFixed(0)} kcal</strong><br>Aby utrzymać swoją wagę, powinieneś spożywać około ${(bmr * 1.2).toFixed(0)} kcal dziennie`,
-  });
+  const wynikContainer = document.getElementById("wynik-bmr");
+wynikContainer.innerHTML = `<strong>Twoje BMR wynosi: ${bmr.toFixed(0)} kcal</strong><br>Aby utrzymać swoją wagę, powinieneś spożywać około ${(bmr * 1.2).toFixed(0)} kcal dziennie`;
+
 }
 
 // Przypisanie funkcji do formularza
